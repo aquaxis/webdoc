@@ -174,7 +174,7 @@ endclass
 
 `:=` と `:/` の違いを図で示します：
 
-![dist演算子の:=と:/の違い](/images/systemverilog-complete-guide/ch10_dist_operator.drawio.png)
+![dist演算子の:=と:/の違い](/images/systemverilog-guidebook/ch10_dist_operator.drawio.png)
 
 ### 10.3.4 solve...before
 

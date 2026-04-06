@@ -67,7 +67,7 @@ endpackage
 3. **再利用性の向上**: 複数のプロジェクトで共通パッケージを共有可能
 4. **コードの整理**: 関連する定義をグループ化して見通しを良くする
 
-![パッケージの概念](/images/systemverilog-complete-guide/ch08_package_concept.drawio.png)
+![パッケージの概念](/images/systemverilog-guidebook/ch08_package_concept.drawio.png)
 
 ---
 
@@ -441,7 +441,7 @@ package pkg_b;
 endpackage
 ```
 
-![パッケージの依存関係](/images/systemverilog-complete-guide/ch08_package_dependency.drawio.png)
+![パッケージの依存関係](/images/systemverilog-guidebook/ch08_package_dependency.drawio.png)
 
 ---
 

@@ -546,7 +546,7 @@ VCDとFSDBの比較は以下の通りです。
 
 波形ビューワは、信号の時間変化をグラフィカルに表示し、設計の動作を直感的に理解するための不可欠なツールです。
 
-![波形デバッグフロー](/images/systemverilog-complete-guide/ch15_waveform_debug.drawio.png)
+![波形デバッグフロー](/images/systemverilog-guidebook/ch15_waveform_debug.drawio.png)
 
 主要な波形ビューワの特徴を以下にまとめます。
 
@@ -1267,7 +1267,7 @@ endmodule
 
 CI/CD環境での大量テスト実行時に、効率的にデバッグを進めるための戦略を解説します。
 
-![デバッグ戦略フロー](/images/systemverilog-complete-guide/ch15_debug_strategy.drawio.png)
+![デバッグ戦略フロー](/images/systemverilog-guidebook/ch15_debug_strategy.drawio.png)
 
 ```systemverilog
 // テスト結果の自動記録

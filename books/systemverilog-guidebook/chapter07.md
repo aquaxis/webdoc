@@ -70,7 +70,7 @@ endtask
 | `always_comb` 内での呼び出し | 可能 | 不可 |
 | 合成可能性 | 高い | 低い（テストベンチ向け） |
 
-![タスクと関数の違い](/images/systemverilog-complete-guide/ch07_task_vs_function.drawio.png)
+![タスクと関数の違い](/images/systemverilog-guidebook/ch07_task_vs_function.drawio.png)
 
 ---
 
@@ -298,7 +298,7 @@ endfunction
 | `inout` | 呼び出し時と終了時 | 値の受け取りと返却 | 双方向のデータ移動 |
 | `ref` | コピーなし（参照） | 大きなデータの効率的な受け渡し | `automatic` 必須 |
 
-![引数の受け渡し方向](/images/systemverilog-complete-guide/ch07_argument_directions.drawio.png)
+![引数の受け渡し方向](/images/systemverilog-guidebook/ch07_argument_directions.drawio.png)
 
 ---
 

@@ -16,7 +16,7 @@ title: "第5章：組み合わせ回路と順序回路"
 
 これらを正しく理解し使い分けることで、設計者の意図を明確に伝え、シミュレーションと合成結果の一致した信頼性の高いRTLコードを書けるようになります。
 
-![組み合わせ回路と順序回路の概要](/images/systemverilog-complete-guide/ch05_overview.drawio.png)
+![組み合わせ回路と順序回路の概要](/images/systemverilog-guidebook/ch05_overview.drawio.png)
 
 ---
 
@@ -101,7 +101,7 @@ endmodule
 - `default`節を必ず記述します
 - ブロック内で代入する信号は、他のブロックから代入しません
 
-![always_combの動作原理](/images/systemverilog-complete-guide/ch05_always_comb.drawio.png)
+![always_combの動作原理](/images/systemverilog-guidebook/ch05_always_comb.drawio.png)
 
 ### 5.2.3 always_ff：順序回路（フリップフロップ）専用
 
@@ -185,7 +185,7 @@ endmodule
 
 これらの専用ブロックを使い分けることで、設計者の意図がコードから明確に読み取れるようになり、ツールによる静的チェックも強化されます。汎用の`always`ブロックは、新しいRTLコードでは使用すべきではありません。
 
-![alwaysブロックの使い分け](/images/systemverilog-complete-guide/ch05_always_blocks.drawio.png)
+![alwaysブロックの使い分け](/images/systemverilog-guidebook/ch05_always_blocks.drawio.png)
 
 ---
 
@@ -281,7 +281,7 @@ endmodule
 // 結果：すべての出力が同時にdの値になる。シフト動作しない。
 ```
 
-![ブロッキング代入とノンブロッキング代入の違い](/images/systemverilog-complete-guide/ch05_blocking_vs_nonblocking.drawio.png)
+![ブロッキング代入とノンブロッキング代入の違い](/images/systemverilog-guidebook/ch05_blocking_vs_nonblocking.drawio.png)
 
 以下に、組み合わせ回路での中間変数を用いた典型的なパターンを示します。
 
@@ -341,7 +341,7 @@ end
 - **合成ツールへの影響**：条件が排他的であるため、優先エンコーダではなく**並列マルチプレクサ**として合成できます。これにより回路の遅延が削減されます。
 - **シミュレーション時の検出**：実行時にどの条件にも一致しない場合、または複数の条件が同時に真になる場合に、警告が発生します。
 
-![並列マルチプレクサと優先エンコーダ](/images/systemverilog-complete-guide/ch05_parallel_vs_priority.drawio.png)
+![並列マルチプレクサと優先エンコーダ](/images/systemverilog-guidebook/ch05_parallel_vs_priority.drawio.png)
 
 ### 5.4.2 priority if
 

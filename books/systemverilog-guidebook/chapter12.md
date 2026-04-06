@@ -189,7 +189,7 @@ property non_overlapping_example;
 endproperty
 ```
 
-![含意演算子の動作](/images/systemverilog-complete-guide/ch12_implication_operators.drawio.png)
+![含意演算子の動作](/images/systemverilog-guidebook/ch12_implication_operators.drawio.png)
 
 ---
 

@@ -22,7 +22,7 @@ SystemVerilogにおける設計の基本単位は**モジュール（module）**
 
 これらを理解することで、大規模なハードウェア設計においても、見通しの良い階層構造と効率的な信号接続を実現できるようになります。
 
-![モジュールとインターフェースの関係](/images/systemverilog-complete-guide/ch06_module_interface_overview.drawio.png)
+![モジュールとインターフェースの関係](/images/systemverilog-guidebook/ch06_module_interface_overview.drawio.png)
 
 ---
 
@@ -79,7 +79,7 @@ endmodule
 
 ここで `u_adder` はインスタンス名であり、同じモジュールを複数回インスタンス化する場合はそれぞれ異なる名前を付ける必要があります。
 
-![モジュールの階層構造](/images/systemverilog-complete-guide/ch06_module_hierarchy.drawio.png)
+![モジュールの階層構造](/images/systemverilog-guidebook/ch06_module_hierarchy.drawio.png)
 
 ---
 
@@ -340,7 +340,7 @@ module multiplier #(
 endmodule
 ```
 
-![generate文による条件付きインスタンス化](/images/systemverilog-complete-guide/ch06_generate_block.drawio.png)
+![generate文による条件付きインスタンス化](/images/systemverilog-guidebook/ch06_generate_block.drawio.png)
 
 ---
 
@@ -474,7 +474,7 @@ module top;
 endmodule
 ```
 
-![インターフェースによる信号集約](/images/systemverilog-complete-guide/ch06_interface_concept.drawio.png)
+![インターフェースによる信号集約](/images/systemverilog-guidebook/ch06_interface_concept.drawio.png)
 
 ### 6.6.3 modportによる入出力方向の定義
 
@@ -795,7 +795,7 @@ endmodule
 
 このように、インターフェースを用いることで、AXI-Liteバスの約20本の信号を単一のポートとして扱えます。新しいスレーブを追加する場合も、インターフェースのインスタンスを追加して接続するだけでよく、信号の宣言漏れや接続ミスのリスクが大幅に軽減されます。
 
-![AXIバスへのインターフェース適用](/images/systemverilog-complete-guide/ch06_axi_interface.drawio.png)
+![AXIバスへのインターフェース適用](/images/systemverilog-guidebook/ch06_axi_interface.drawio.png)
 
 ---
 

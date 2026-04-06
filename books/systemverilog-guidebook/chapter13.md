@@ -31,7 +31,7 @@ title: "第13章：機能カバレッジ"
 4. **テストの追加**: カバレッジ穴（coverage hole）を埋めるテストを追加
 5. **目標達成**: すべてのカバレッジが目標値に到達したら検証完了
 
-![機能カバレッジの検証フロー](/images/systemverilog-complete-guide/ch13_coverage_flow.drawio.png)
+![機能カバレッジの検証フロー](/images/systemverilog-guidebook/ch13_coverage_flow.drawio.png)
 
 ---
 

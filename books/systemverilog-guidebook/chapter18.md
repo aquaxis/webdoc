@@ -8,7 +8,7 @@ title: "第18章：プロジェクト演習"
 
 本章では、これまでに学んだSystemVerilogの知識を統合し、**実践的なプロジェクト演習**に取り組みます。3つのプロジェクト――UARTコントローラ、簡易CPU、SPIマスターコントローラ――を通じて、RTL設計から検証までの一連のフローを体験します。各プロジェクトでは仕様策定、RTLコーディング、テストベンチ作成、機能カバレッジの収集、デバッグまでを一貫して実施します。個々の章で学んだ技術がどのように組み合わさるかを実感し、実務に近い設計・検証スキルを身につけましょう。
 
-![プロジェクト演習の全体構成](/images/systemverilog-complete-guide/ch17_project_overview.drawio.png)
+![プロジェクト演習の全体構成](/images/systemverilog-guidebook/ch17_project_overview.drawio.png)
 
 ---
 
@@ -26,7 +26,7 @@ title: "第18章：プロジェクト演習"
 6. **カバレッジ収集・分析**: 機能カバレッジとコードカバレッジの達成率を確認します
 7. **デバッグ・修正**: 不具合を発見した場合は原因を特定し修正します
 
-![設計・検証フロー](/images/systemverilog-complete-guide/ch17_design_verification_flow.drawio.png)
+![設計・検証フロー](/images/systemverilog-guidebook/ch17_design_verification_flow.drawio.png)
 
 ### 18.2.2 検証目標の設定
 
@@ -73,7 +73,7 @@ project_name/
 - **FIFO**: 送信・受信それぞれ8段のFIFO
 - **クロック周波数**: 50 MHz
 
-![UARTフレームフォーマット](/images/systemverilog-complete-guide/ch17_uart_frame_format.drawio.png)
+![UARTフレームフォーマット](/images/systemverilog-guidebook/ch17_uart_frame_format.drawio.png)
 
 UARTフレームは以下の構成です。
 
@@ -94,7 +94,7 @@ UARTコントローラは以下のサブモジュールで構成します。
 - **baud_gen**: ボーレートジェネレータ
 - **uart_fifo**: 送信/受信用FIFO
 
-![UARTモジュール構成](/images/systemverilog-complete-guide/ch17_uart_module_structure.drawio.png)
+![UARTモジュール構成](/images/systemverilog-guidebook/ch17_uart_module_structure.drawio.png)
 
 ### 18.3.3 ボーレートジェネレータ
 
@@ -534,7 +534,7 @@ I型命令（即値付き演算・メモリアクセス）:
 [15:12] opcode | [11:10] rd | [9:8] rs1 | [7:0] imm
 ```
 
-![簡易CPU命令フォーマット](/images/systemverilog-complete-guide/ch17_cpu_instruction_format.drawio.png)
+![簡易CPU命令フォーマット](/images/systemverilog-guidebook/ch17_cpu_instruction_format.drawio.png)
 
 命令セットの一覧です。
 
@@ -565,7 +565,7 @@ CPUは以下のサブモジュールで構成します。
 - **inst_mem**: 命令メモリ（ROM）
 - **data_mem**: データメモリ（RAM）
 
-![簡易CPUブロック図](/images/systemverilog-complete-guide/ch17_cpu_block_diagram.drawio.png)
+![簡易CPUブロック図](/images/systemverilog-guidebook/ch17_cpu_block_diagram.drawio.png)
 
 ### 18.4.3 ALU（算術論理演算ユニット）
 
@@ -984,7 +984,7 @@ endmodule
 | **MISO** | スレーブ→マスター | Master In Slave Out（受信データ） |
 | **CS_N** | マスター→スレーブ | チップセレクト（アクティブLow） |
 
-![SPIバス接続図](/images/systemverilog-complete-guide/ch17_spi_bus_connection.drawio.png)
+![SPIバス接続図](/images/systemverilog-guidebook/ch17_spi_bus_connection.drawio.png)
 
 本プロジェクトでは以下の仕様でSPIマスターを設計します。
 
@@ -1418,7 +1418,7 @@ ALL SPI TESTS PASSED
 5. **根本原因の特定**: RTLのロジックやステートマシンの誤りを発見します
 6. **修正と回帰テスト**: 修正後、既存のテストがすべて通ることを確認します
 
-![デバッグフロー](/images/systemverilog-complete-guide/ch17_debug_flow.drawio.png)
+![デバッグフロー](/images/systemverilog-guidebook/ch17_debug_flow.drawio.png)
 
 ### 18.6.2 各プロジェクトでの典型的な問題
 

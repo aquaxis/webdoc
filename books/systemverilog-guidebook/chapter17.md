@@ -8,7 +8,7 @@ title: "第17章：デザインパターンと実践"
 
 本章では、SystemVerilogにおける**デザインパターンと実践的なコーディング技法**について解説します。ソフトウェア工学で確立されたデザインパターンの考え方をハードウェア設計・検証に適用し、再利用性・保守性・信頼性の高い設計を実現する方法を学びます。RTL設計における頻出パターン（FSM、パイプライン、ハンドシェイク、FIFO、アービタ）、検証におけるテストベンチアーキテクチャパターン、再利用可能なコンポーネント設計、コーディングベストプラクティス、よくある落とし穴とアンチパターン、そしてUVM（Universal Verification Methodology）の概要まで、実践的なSystemVerilog開発に必要な知識を体系的に習得します。
 
-![デザインパターンの全体像](/images/systemverilog-complete-guide/ch16_design_patterns_overview.drawio.png)
+![デザインパターンの全体像](/images/systemverilog-guidebook/ch16_design_patterns_overview.drawio.png)
 
 ---
 
@@ -56,7 +56,7 @@ endmodule
 - **2プロセス方式**: 順序回路と組み合わせ回路を分離し、見通しを良くします
 - **デフォルト値の設定**: `always_comb` 内の先頭でデフォルト値を設定し、ラッチ推論を防止します
 
-![FSMの2プロセスパターン](/images/systemverilog-complete-guide/ch16_fsm_two_process.drawio.png)
+![FSMの2プロセスパターン](/images/systemverilog-guidebook/ch16_fsm_two_process.drawio.png)
 
 ### 17.2.2 パイプラインパターン
 
@@ -108,7 +108,7 @@ interface handshake_if #(parameter DATA_WIDTH = 32)(
 endinterface
 ```
 
-![ハンドシェイクプロトコルのタイミング](/images/systemverilog-complete-guide/ch16_handshake_timing.drawio.png)
+![ハンドシェイクプロトコルのタイミング](/images/systemverilog-guidebook/ch16_handshake_timing.drawio.png)
 
 - **valid先行**: 送信側は `ready` を待たずに `valid` をアサートできます
 - **転送成立**: `valid && ready` が同時に成立したクロックエッジでデータが転送されます
@@ -190,7 +190,7 @@ endmodule
 
 階層化テストベンチでは、テストベンチを機能ごとのレイヤーに分割します。
 
-![階層化テストベンチの構造](/images/systemverilog-complete-guide/ch16_layered_testbench.drawio.png)
+![階層化テストベンチの構造](/images/systemverilog-guidebook/ch16_layered_testbench.drawio.png)
 
 | レイヤー | 責務 | 例 |
 |---------|------|-----|
@@ -406,7 +406,7 @@ package project_pkg;
 endpackage
 ```
 
-![再利用可能なコンポーネント設計の構造](/images/systemverilog-complete-guide/ch16_reusable_components.drawio.png)
+![再利用可能なコンポーネント設計の構造](/images/systemverilog-guidebook/ch16_reusable_components.drawio.png)
 
 ---
 
@@ -531,7 +531,7 @@ always_ff @(posedge clk or negedge rst_n)
 - **クロックドメイン交差（CDC）の無視**: 異なるクロックドメイン間にはシンクロナイザが必要です
 - **`initial` ブロックでのハードウェア記述**: `initial` は合成不可（テストベンチ専用）です
 
-![よくある落とし穴の分類](/images/systemverilog-complete-guide/ch16_common_pitfalls.drawio.png)
+![よくある落とし穴の分類](/images/systemverilog-guidebook/ch16_common_pitfalls.drawio.png)
 
 ---
 
@@ -547,7 +547,7 @@ always_ff @(posedge clk or negedge rst_n)
 - **シーケンスメカニズム**: テストシナリオをシーケンスとして構造化し再利用できます
 - **TLM（Transaction Level Modeling）**: コンポーネント間通信をトランザクションレベルで抽象化します
 
-![UVMアーキテクチャ](/images/systemverilog-complete-guide/ch16_uvm_architecture.drawio.png)
+![UVMアーキテクチャ](/images/systemverilog-guidebook/ch16_uvm_architecture.drawio.png)
 
 ### 17.7.2 UVMコンポーネント階層
 

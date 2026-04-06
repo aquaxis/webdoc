@@ -28,7 +28,7 @@ title: "第14章：DPI-C（Direct Programming Interface）"
 - **高い性能**: 関数呼び出しのオーバーヘッドが最小限に抑えられています
 - **双方向通信**: SVからCを呼ぶ（import）だけでなく、CからSVを呼ぶ（export）ことも可能です
 
-![DPI-Cのアーキテクチャ](/images/systemverilog-complete-guide/ch14_dpi_architecture.drawio.png)
+![DPI-Cのアーキテクチャ](/images/systemverilog-guidebook/ch14_dpi_architecture.drawio.png)
 
 ### 14.2.2 import宣言（CをSVから呼び出す）
 
@@ -200,7 +200,7 @@ import "DPI-C" function void process_packed_cmd(input packed_cmd_t cmd);
 import "DPI-C" function void process_unpacked_info(input unpacked_info_t info);
 ```
 
-![DPI-Cデータ型マッピング](/images/systemverilog-complete-guide/ch14_dpi_type_mapping.drawio.png)
+![DPI-Cデータ型マッピング](/images/systemverilog-guidebook/ch14_dpi_type_mapping.drawio.png)
 
 ---
 
@@ -380,7 +380,7 @@ void read_signal_value() {
 
 DPI-Cで使用するC/C++コードは、共有ライブラリ（`.so` / `.dll`）としてコンパイルし、シミュレータにリンクします。
 
-![DPI-Cビルドフロー](/images/systemverilog-complete-guide/ch14_dpi_build_flow.drawio.png)
+![DPI-Cビルドフロー](/images/systemverilog-guidebook/ch14_dpi_build_flow.drawio.png)
 
 ```c
 // ファイル: dpi_functions.c
@@ -616,7 +616,7 @@ module factory_example;
 endmodule
 ```
 
-![ファクトリパターンのクラス図](/images/systemverilog-complete-guide/ch14_factory_pattern.drawio.png)
+![ファクトリパターンのクラス図](/images/systemverilog-guidebook/ch14_factory_pattern.drawio.png)
 
 ---
 

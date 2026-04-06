@@ -93,7 +93,7 @@ end
 | `fork-join_any` | **いずれか**のプロセスが完了 | タイムアウト付き待機、レース検出 |
 | `fork-join_none` | **待たない**（即座に続行） | バックグラウンド監視の起動 |
 
-![fork-joinの3つのバリエーション](/images/systemverilog-complete-guide/ch11_fork_join_variants.drawio.png)
+![fork-joinの3つのバリエーション](/images/systemverilog-guidebook/ch11_fork_join_variants.drawio.png)
 
 ### 11.2.3 実践例：タイムアウト付きトランザクション
 
@@ -356,7 +356,7 @@ endmodule
 | `try_peek(ref item)` | peekのノンブロッキング版 |
 | `num()` | 格納されているデータ数を返す |
 
-![mailboxのプロデューサ・コンシューマパターン](/images/systemverilog-complete-guide/ch11_mailbox_pattern.drawio.png)
+![mailboxのプロデューサ・コンシューマパターン](/images/systemverilog-guidebook/ch11_mailbox_pattern.drawio.png)
 
 ---
 
