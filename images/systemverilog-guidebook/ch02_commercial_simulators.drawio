@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;商用シミュレータ比較（VCS / Questa / Xcelium）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="450" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;VCS&lt;/b&gt;&lt;br&gt;（Synopsys）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="240" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;Questa&lt;/b&gt;&lt;br&gt;（Siemens EDA）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="240" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="&lt;b&gt;Xcelium&lt;/b&gt;&lt;br&gt;（Cadence）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="240" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="✓ コンパイル型・高速&lt;br&gt;✓ Verdiとの統合が強力&lt;br&gt;✓ UVM参照実装&lt;br&gt;✓ カバレッジ管理優秀&lt;br&gt;✓ ASIC設計で標準" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="✓ インタプリタ/コンパイル両対応&lt;br&gt;✓ GUI統合デバッグ&lt;br&gt;✓ FPGA向けライブラリ充実&lt;br&gt;✓ 形式検証との連携&lt;br&gt;✓ ABVサポート手厚い" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="130" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="✓ マルチコア対応&lt;br&gt;✓ ミックスドランゲージ強力&lt;br&gt;✓ VIP（AXI/PCIe等）豊富&lt;br&gt;✓ SimVisionデバッグ&lt;br&gt;✓ SoC設計で標準" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="650" y="130" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;主な用途&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="240" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="ASIC設計・検証&lt;br&gt;大規模SoC" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="260" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;主な用途&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="240" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="FPGA開発&lt;br&gt;ASIC設計" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="260" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;主な用途&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="240" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="SoC設計・検証&lt;br&gt;ミックスドランゲージ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="260" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;コスト&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="300" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="高額" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="320" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;コスト&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="300" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="中〜高額" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="320" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;コスト&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="300" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="高額" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="320" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;共通点&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;verticalAlign=top;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="800" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="• SystemVerilog IEEE 1800規格完全対応&lt;br&gt;• UVM（Universal Verification Methodology）完全サポート&lt;br&gt;• 高度なデバッグ機能と波形ビューア統合&lt;br&gt;• プロフェッショナルなテクニカルサポート" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="400" width="380" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

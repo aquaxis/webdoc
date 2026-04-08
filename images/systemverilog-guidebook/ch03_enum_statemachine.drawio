@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;enum（列挙型）によるステートマシン設計&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="380" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="IDLE" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="FETCH" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="120" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="DECODE" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="EXEC" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="280" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="WRITE" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="280" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="150" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="start" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="8">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="5" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="150" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="180" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="310" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7" target="3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="310" as="sourcePoint"/>
+            <mxPoint x="220" y="310" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="280" y="310"/>
+              <mxPoint x="280" y="150"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;enum定義例&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="720" y="80" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="typedef enum logic [2:0] {&lt;br&gt;    IDLE   = 3'b000,&lt;br&gt;    FETCH  = 3'b001,&lt;br&gt;    DECODE = 3'b010,&lt;br&gt;    EXEC   = 3'b011,&lt;br&gt;    WRITE  = 3'b100&lt;br&gt;} cpu_state_t;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="720" y="120" width="180" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;メリット&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="720" y="260" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="✓ 型安全性：無効な値を&lt;br&gt;  コンパイル時に検出&lt;br&gt;✓ 可読性：状態が名前で&lt;br&gt;  明確に表現される&lt;br&gt;✓ デバッグ：.name()で&lt;br&gt;  状態名を文字列取得&lt;br&gt;✓ メソッド：.next(), .prev()&lt;br&gt;  等の便利機能" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="290" width="160" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="&lt;b&gt;CPU命令実行ステートマシン&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="380" width="220" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

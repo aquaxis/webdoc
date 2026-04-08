@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;pure属性とcontext属性の比較&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="240" y="20" width="280" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;pure関数&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;context関数&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="&lt;b&gt;特性&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="520" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="230" as="sourcePoint"/>
+            <mxPoint x="600" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="270" as="sourcePoint"/>
+            <mxPoint x="600" y="270" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="310" as="sourcePoint"/>
+            <mxPoint x="600" y="310" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="350" as="sourcePoint"/>
+            <mxPoint x="600" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="190" as="sourcePoint"/>
+            <mxPoint x="200" y="390" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="190" as="sourcePoint"/>
+            <mxPoint x="400" y="390" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="項目" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="pure" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="context" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="説明" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="200" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="副作用" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="240" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="なし" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="許容" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="420" y="240" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="グローバル変数やI/O" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="500" y="240" width="90" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="SVコンテキスト" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="アクセス不可" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="210" y="280" width="90" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="アクセス可能" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="410" y="280" width="90" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="export関数呼び出し" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="500" y="280" width="90" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="最適化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="320" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="最大限" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="220" y="320" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="制限あり" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="420" y="320" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="結果キャッシュ等" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="500" y="320" width="90" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="用途" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="360" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="30" value="純粋計算" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="220" y="360" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" value="SV呼び出し、VPI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="410" y="360" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="数学関数等" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="510" y="360" width="70" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="&lt;b&gt;コード例&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="420" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="34" value="// pure関数: 副作用なし&lt;br&gt;import &quot;DPI-C&quot; pure function&lt;br&gt;  int c_add(input int a, b);&lt;br&gt;&lt;br&gt;// 数学関数、CRC計算等" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="// context関数: SV呼び出し可&lt;br&gt;import &quot;DPI-C&quot; context function&lt;br&gt;  void c_log(input string msg);&lt;br&gt;&lt;br&gt;// SV export関数を呼び出す" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="400" y="450" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="36" value="&lt;b&gt;使い分けのポイント&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#fff2cc;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="130" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="37" value="• pure: 同じ入力なら同じ出力（参照透過性）&lt;br&gt;• context: SV内部状態にアクセス可能&lt;br&gt;• デフォルト（属性なし）: I/O可、SV呼び出し不可&lt;br&gt;• 可能な限りpureを使用して性能向上" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#d6b656;fillColor=#fff2cc;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="300" height="80" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

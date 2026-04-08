@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;名前解決の優先順位（スコープルール）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="400" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;優先度&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#e1d5e7;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;スコープ&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#e1d5e7;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="&lt;b&gt;例&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#e1d5e7;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="320" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="&lt;b&gt;説明&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#e1d5e7;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="80" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#dae8fc;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="ローカル変数" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#dae8fc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="160" y="120" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="function f();&lt;br&gt;  int x; // このx" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#dae8fc;fontSize=10;fontFamily=Courier New;align=left;" vertex="1" parent="1">
+          <mxGeometry x="360" y="120" width="320" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="最内側のブロックで&lt;br&gt;宣言された変数" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#dae8fc;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="2" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#d5e8d4;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="モジュール内変数" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#d5e8d4;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="module m();&lt;br&gt;  int x; // 次に検索" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;align=left;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="320" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="モジュールの&lt;br&gt;ポート・宣言ブロック" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#d5e8d4;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="680" y="160" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="3" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#fff2cc;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="パッケージのimport" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#fff2cc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="160" y="200" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="import pkg::*;&lt;br&gt;// pkg内の名前を検索" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#fff2cc;fontSize=10;fontFamily=Courier New;align=left;" vertex="1" parent="1">
+          <mxGeometry x="360" y="200" width="320" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="import宣言で&lt;br&gt;取り込んだ名前" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#fff2cc;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="680" y="200" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="4" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f8cecc;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="$unitスコープ" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f8cecc;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="160" y="240" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="// ファイルレベルで宣言&lt;br&gt;parameter int X = 5;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f8cecc;fontSize=10;fontFamily=Courier New;align=left;" vertex="1" parent="1">
+          <mxGeometry x="360" y="240" width="320" height="40" as="geometry"/>
+        </Cell>
+        <mxCell id="22" value="コンパイル単位&lt;br&gt;（$unit）の宣言" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f8cecc;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="680" y="240" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="&lt;b&gt;名前解決の流れ&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="360" as="sourcePoint"/>
+            <mxPoint x="100" y="480" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="ローカル&lt;br&gt;変数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="340" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="モジュール&lt;br&gt;内変数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="390" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="パッケージ&lt;br&gt;import" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="440" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="$unit&lt;br&gt;スコープ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="490" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="見つかったら終了&lt;br&gt;見つからなければ次へ" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="220" y="400" width="150" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="30" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#333333;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="360" as="sourcePoint"/>
+            <mxPoint x="220" y="410" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="見つからない場合:&lt;br&gt;コンパイルエラー" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="220" y="490" width="130" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="&lt;b&gt;ポイント&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#e1d5e7;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="• 内側のスコープから外側へ検索&lt;br&gt;• 最初に見つかった名前を使用&lt;br&gt;• 同じ名前がある場合は&lt;br&gt;  内側が優先（シャドウイング）&lt;br&gt;• パッケージのwildcard importは&lt;br&gt;  明示的importより優先度が低い" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#9673a6;fillColor=#e1d5e7;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="370" width="280" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

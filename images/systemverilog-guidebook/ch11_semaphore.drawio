@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;セマフォ（semaphore）による排他制御&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="380" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;概念図&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="リソース&lt;br&gt;（1つのキー）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="360" y="120" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="プロセスA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="プロセスB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="プロセスC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#82b366;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="120" as="sourcePoint"/>
+            <mxPoint x="360" y="150" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="put()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=1;" vertex="1" connectable="0" parent="8">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="30" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#82b366;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="150" as="sourcePoint"/>
+            <mxPoint x="160" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="get()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=1;" vertex="1" connectable="0" parent="10">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="30" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="240" as="sourcePoint"/>
+            <mxPoint x="360" y="165" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="待機" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontStyle=0;" vertex="1" connectable="0" parent="12">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="50" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;基本操作&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;get()&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="350" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="キーを取得&lt;br&gt;（待機する場合も）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="380" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="&lt;b&gt;put()&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="キーを返却&lt;br&gt;（待機中のプロセスを起床）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="200" y="380" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;try_get()&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="280" y="350" width="70" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="即時取得&lt;br&gt;（失敗時0返却）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="275" y="380" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="&lt;b&gt;使用例：共有リソース&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="150" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="semaphore sem = new(1);&lt;br&gt;&lt;br&gt;// リソースへのアクセス&lt;br&gt;sem.get();&lt;br&gt;// クリティカルセクション&lt;br&gt;access_shared_resource();&lt;br&gt;sem.put();" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="400" y="330" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="&lt;b&gt;ポイント&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f8cecc;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="70" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="• new(1)でキー数=1のセマフォ作成&lt;br&gt;• get/putでキーを取得/返却&lt;br&gt;• 複数リソースなら new(N) で作成" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#b85450;fillColor=#f8cecc;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="280" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

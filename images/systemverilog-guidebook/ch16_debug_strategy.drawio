@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" modified="2026-02-16" type="device">
+  <diagram id="ch15_dbg_strat" name="デバッグ戦略フロー">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="2" value="デバッグ戦略フロー（CI/CD Debug Strategy）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Top: 回帰テスト実行 ========== -->
+        <mxCell id="10" value="&lt;b&gt;回帰テスト実行（CI/CD）&lt;/b&gt;&lt;br&gt;Jenkins / GitLab CI / GitHub Actions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Diamond: テスト結果 ========== -->
+        <mxCell id="20" value="&lt;b&gt;テスト結果&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="190" width="160" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ========== PASS path: テスト通過 ========== -->
+        <mxCell id="30" value="&lt;b&gt;テスト通過&lt;/b&gt;&lt;br&gt;ログ保存・レポート生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="• テスト結果をDBに記録&lt;br&gt;• カバレッジデータ統合&lt;br&gt;• 成功通知送信" style="text;html=1;align=left;fontSize=10;fillColor=#E8F5E9;strokeColor=#82b366;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="270" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ========== FAIL path: テスト失敗 ========== -->
+        <mxCell id="40" value="&lt;b&gt;テスト失敗&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="215" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 失敗トリアージ ========== -->
+        <mxCell id="50" value="&lt;b&gt;失敗トリアージ&lt;/b&gt;&lt;br&gt;失敗分類・優先度付け" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="320" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== エラーログ解析 ========== -->
+        <mxCell id="60" value="&lt;b&gt;エラーログ解析&lt;/b&gt;&lt;br&gt;UVM_ERROR / UVM_FATAL 解析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="430" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 再現性確認 ========== -->
+        <mxCell id="70" value="&lt;b&gt;再現性確認&lt;/b&gt;&lt;br&gt;同一seed / 同一条件で再実行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="540" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 波形確認 ========== -->
+        <mxCell id="80" value="&lt;b&gt;波形確認&lt;/b&gt;&lt;br&gt;Verdi / DVE で信号解析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="650" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 根本原因特定 ========== -->
+        <mxCell id="90" value="&lt;b&gt;根本原因特定&lt;/b&gt;&lt;br&gt;RTL / TB / 環境の問題切り分け" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="650" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 修正 & 回帰テスト ========== -->
+        <mxCell id="100" value="&lt;b&gt;修正 &amp;amp; 回帰テスト&lt;/b&gt;&lt;br&gt;修正を適用し再度CIを実行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="770" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== フロー矢印 ========== -->
+        <!-- 回帰テスト → テスト結果 -->
+        <mxCell id="110" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="10" target="20" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- テスト結果 → PASS -->
+        <mxCell id="111" value="&lt;b&gt;PASS&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=3;strokeColor=#2e7d32;endArrow=classic;fontSize=12;fontColor=#2e7d32;" edge="1" source="20" target="30" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- テスト結果 → FAIL -->
+        <mxCell id="112" value="&lt;b&gt;FAIL&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=3;strokeColor=#b85450;endArrow=classic;fontSize=12;fontColor=#b85450;" edge="1" source="20" target="40" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- テスト失敗 → 失敗トリアージ -->
+        <mxCell id="113" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="40" target="50" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 失敗トリアージ → エラーログ解析 -->
+        <mxCell id="114" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="50" target="60" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- エラーログ解析 → 再現性確認 -->
+        <mxCell id="115" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="60" target="70" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 再現性確認 → 波形確認 -->
+        <mxCell id="116" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="70" target="80" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 波形確認 → 根本原因特定 -->
+        <mxCell id="117" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="80" target="90" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 根本原因特定 → 修正 & 回帰テスト -->
+        <mxCell id="118" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;endArrow=classic;" edge="1" source="90" target="100" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 修正 → 回帰テスト（ループバック） -->
+        <mxCell id="119" value="再テスト" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#6c8ebf;endArrow=classic;dashed=1;fontSize=10;fontColor=#6c8ebf;" edge="1" source="100" target="10" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="797" />
+              <mxPoint x="300" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== Side annotation: JSON形式で結果を自動記録 ========== -->
+        <mxCell id="130" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="260" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="131" value="&lt;b&gt;JSON形式で結果を自動記録&lt;/b&gt;" style="text;html=1;align=center;fontSize=13;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="405" width="240" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="132" value="{&lt;br&gt;  &quot;test_name&quot;: &quot;axi_burst_test&quot;,&lt;br&gt;  &quot;status&quot;: &quot;FAIL&quot;,&lt;br&gt;  &quot;seed&quot;: 12345,&lt;br&gt;  &quot;error_msg&quot;: &quot;UVM_ERROR...&quot;,&lt;br&gt;  &quot;sim_time&quot;: &quot;45230ns&quot;,&lt;br&gt;  &quot;log_path&quot;: &quot;/logs/run_001/&quot;,&lt;br&gt;  &quot;waveform&quot;: &quot;run_001.fsdb&quot;,&lt;br&gt;  &quot;timestamp&quot;: &quot;2026-02-16T10:30:00Z&quot;&lt;br&gt;}" style="text;html=1;align=left;fontSize=10;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontFamily=Courier New;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="435" width="240" height="160" as="geometry" />
+        </mxCell>
+        <!-- 注釈矢印: JSON → テスト結果 -->
+        <mxCell id="133" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#666666;endArrow=open;dashed=1;endFill=0;" edge="1" source="130" target="20" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="500" />
+              <mxPoint x="350" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== デバッグフェーズラベル ========== -->
+        <mxCell id="140" value="&lt;b&gt;検出フェーズ&lt;/b&gt;" style="text;html=1;align=center;fontSize=11;fontColor=#b85450;fontStyle=1;fillColor=#FFEBEE;strokeColor=#b85450;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="310" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="141" value="&lt;b&gt;分析フェーズ&lt;/b&gt;" style="text;html=1;align=center;fontSize=11;fontColor=#d79b00;fontStyle=1;fillColor=#FFF3E0;strokeColor=#d79b00;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="450" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="142" value="&lt;b&gt;解決フェーズ&lt;/b&gt;" style="text;html=1;align=center;fontSize=11;fontColor=#9673a6;fontStyle=1;fillColor=#F3E5F5;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="660" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

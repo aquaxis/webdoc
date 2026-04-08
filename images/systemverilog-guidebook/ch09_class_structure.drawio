@@ -1,0 +1,59 @@
+<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;クラスの構造（プロパティとメソッド）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="350" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;class Transaction&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="300" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;プロパティ（データメンバ）&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="rand bit [31:0] addr;&lt;br&gt;rand bit [31:0] data;&lt;br&gt;rand bit [3:0]  be;&lt;br&gt;bit              valid;&lt;br&gt;string           name;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="110" y="150" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="&lt;b&gt;メソッド（関数・タスク）&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="function void display();&lt;br&gt;task send();&lt;br&gt;function bit check();" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="110" y="280" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="&lt;b&gt;インスタンス化と使用&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Transaction t;&lt;br&gt;t = new();&lt;br&gt;t.addr = 32'h1000;&lt;br&gt;t.display();" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="80" y="410" width="150" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;クラス定義&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#e1d5e7;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;オブジェクト（インスタンス）&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;fontSize=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="280" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="t (ハンドル)&lt;br&gt;↓&lt;br&gt;+------------------+&lt;br&gt;| addr: 32'h1000  |&lt;br&gt;| data: 0          |&lt;br&gt;| be:   0x0        |&lt;br&gt;| valid: 0         |&lt;br&gt;| name: &quot;trans&quot;   |&lt;br&gt;+------------------+" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="440" y="110" width="240" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="9" target="12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="450" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="new()で作成" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=1;" vertex="1" connectable="0" parent="13">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="50" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;用語&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="• クラス: 設計図（テンプレート）&lt;br&gt;• オブジェクト: 実体（インスタンス）&lt;br&gt;• ハンドル: オブジェクトへの参照&lt;br&gt;• プロパティ: オブジェクトの状態&lt;br&gt;• メソッド: オブジェクトの振る舞い" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=#666666;fillColor=#f5f5f5;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="310" width="260" height="80" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
