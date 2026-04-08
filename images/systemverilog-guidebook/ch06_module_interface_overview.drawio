@@ -1,93 +1,93 @@
-<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="draw.io" version="22.0.0">
+<mxfile host="app.diagrams.net" modified="2026-04-08T00:00:00.000Z" agent="draw.io" version="22.0.0">
   <diagram name="モジュールとインターフェースの関係" id="ch06_module_interface_overview">
-    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
         <!-- Title -->
         <mxCell id="2" value="モジュールとインターフェースの関係" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="350" y="20" width="450" height="40" as="geometry"/>
+          <mxGeometry x="400" y="20" width="450" height="40" as="geometry"/>
         </mxCell>
         <!-- Without Interface Section -->
-        <mxCell id="3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="80" width="580" height="350" as="geometry"/>
+        <mxCell id="3" value="" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="80" width="600" height="370" as="geometry"/>
         </mxCell>
         <mxCell id="4" value="インターフェースなし（従来の接続）" style="text;html=1;fontSize=16;fontStyle=1;align=center;fontColor=#C62828;" vertex="1" parent="1">
-          <mxGeometry x="100" y="90" width="400" height="30" as="geometry"/>
+          <mxGeometry x="120" y="90" width="400" height="30" as="geometry"/>
         </mxCell>
         <!-- Module A (without interface) -->
         <mxCell id="5" value="Module A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="160" width="160" height="200" as="geometry"/>
+          <mxGeometry x="60" y="150" width="160" height="220" as="geometry"/>
         </mxCell>
         <!-- Module B (without interface) -->
         <mxCell id="6" value="Module B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="410" y="160" width="160" height="200" as="geometry"/>
+          <mxGeometry x="430" y="150" width="160" height="220" as="geometry"/>
         </mxCell>
         <!-- Individual signal lines -->
-        <mxCell id="7" value="clk" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="7" value="clk" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="220" y="185" as="sourcePoint"/>
-            <mxPoint x="410" y="185" as="targetPoint"/>
+            <mxPoint x="430" y="185" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="8" value="rst" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="8" value="rst" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="210" as="sourcePoint"/>
-            <mxPoint x="410" y="210" as="targetPoint"/>
+            <mxPoint x="220" y="215" as="sourcePoint"/>
+            <mxPoint x="430" y="215" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="9" value="data[31:0]" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="9" value="data[31:0]" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="235" as="sourcePoint"/>
-            <mxPoint x="410" y="235" as="targetPoint"/>
+            <mxPoint x="220" y="245" as="sourcePoint"/>
+            <mxPoint x="430" y="245" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="10" value="addr[15:0]" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="10" value="addr[15:0]" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="260" as="sourcePoint"/>
-            <mxPoint x="410" y="260" as="targetPoint"/>
+            <mxPoint x="220" y="275" as="sourcePoint"/>
+            <mxPoint x="430" y="275" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="11" value="valid" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="11" value="valid" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="285" as="sourcePoint"/>
-            <mxPoint x="410" y="285" as="targetPoint"/>
+            <mxPoint x="220" y="305" as="sourcePoint"/>
+            <mxPoint x="430" y="305" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="12" value="ready" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="12" value="ready" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="410" y="310" as="sourcePoint"/>
-            <mxPoint x="220" y="310" as="targetPoint"/>
+            <mxPoint x="430" y="335" as="sourcePoint"/>
+            <mxPoint x="220" y="335" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" value="write_en" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=10;" edge="1" parent="1">
+        <mxCell id="13" value="write_en" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#333;fontSize=12;fontStyle=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="335" as="sourcePoint"/>
-            <mxPoint x="410" y="335" as="targetPoint"/>
+            <mxPoint x="220" y="355" as="sourcePoint"/>
+            <mxPoint x="430" y="355" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
         <!-- Problem annotation -->
-        <mxCell id="14" value="✗ 信号が多くて煩雑&#xa;✗ 接続ミスが起きやすい&#xa;✗ 再利用が困難&#xa;✗ ポート変更時の影響大" style="text;html=1;fontSize=12;align=left;verticalAlign=top;fillColor=#FFCDD2;strokeColor=#EF9A9A;rounded=1;fontColor=#C62828;" vertex="1" parent="1">
-          <mxGeometry x="250" y="370" width="230" height="80" as="geometry"/>
+        <mxCell id="14" value="&#x2717; 信号が多くて煩雑&#xa;&#x2717; 接続ミスが起きやすい&#xa;&#x2717; 再利用が困難&#xa;&#x2717; ポート変更時の影響大" style="text;html=1;fontSize=12;align=left;verticalAlign=top;fillColor=#FFCDD2;strokeColor=#EF9A9A;rounded=1;arcSize=2;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="200" y="385" width="230" height="80" as="geometry"/>
         </mxCell>
         <!-- With Interface Section -->
-        <mxCell id="15" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="640" y="80" width="580" height="350" as="geometry"/>
+        <mxCell id="15" value="" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="80" width="600" height="370" as="geometry"/>
         </mxCell>
         <mxCell id="16" value="インターフェースあり（推奨）" style="text;html=1;fontSize=16;fontStyle=1;align=center;fontColor=#2E7D32;" vertex="1" parent="1">
-          <mxGeometry x="740" y="90" width="350" height="30" as="geometry"/>
+          <mxGeometry x="800" y="90" width="350" height="30" as="geometry"/>
         </mxCell>
         <!-- Module A (with interface) -->
         <mxCell id="17" value="Module A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="670" y="180" width="160" height="140" as="geometry"/>
+          <mxGeometry x="710" y="170" width="160" height="140" as="geometry"/>
         </mxCell>
         <!-- Interface -->
         <mxCell id="18" value="bus_if&#xa;(interface)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="890" y="200" width="130" height="80" as="geometry"/>
+          <mxGeometry x="930" y="195" width="140" height="90" as="geometry"/>
         </mxCell>
         <!-- Module B (with interface) -->
         <mxCell id="19" value="Module B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="1080" y="180" width="160" height="140" as="geometry"/>
+          <mxGeometry x="1130" y="170" width="160" height="140" as="geometry"/>
         </mxCell>
         <!-- Interface connections -->
         <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=4;strokeColor=#FFA000;" edge="1" source="17" target="18" parent="1">
@@ -97,18 +97,18 @@
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <!-- Interface contents -->
-        <mxCell id="22" value="インターフェースに含まれる信号:&#xa;clk, rst, data, addr,&#xa;valid, ready, write_en" style="text;html=1;fontSize=12;align=left;verticalAlign=top;fillColor=#FFF9C4;strokeColor=#F9A825;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="870" y="300" width="220" height="70" as="geometry"/>
+        <mxCell id="22" value="インターフェースに含まれる信号:&#xa;clk, rst, data, addr,&#xa;valid, ready, write_en" style="text;html=1;fontSize=12;align=left;verticalAlign=top;fillColor=#FFF9C4;strokeColor=#F9A825;rounded=1;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="310" width="220" height="70" as="geometry"/>
         </mxCell>
         <!-- Benefit annotation -->
-        <mxCell id="23" value="✓ 信号をグループ化して簡潔&#xa;✓ 接続ミスを防止&#xa;✓ 再利用が容易&#xa;✓ modport で方向を制御" style="text;html=1;fontSize=12;align=left;verticalAlign=top;fillColor=#C8E6C9;strokeColor=#A5D6A7;rounded=1;fontColor=#2E7D32;" vertex="1" parent="1">
-          <mxGeometry x="870" y="380" width="230" height="80" as="geometry"/>
+        <mxCell id="23" value="&#x2713; 信号をグループ化して簡潔&#xa;&#x2713; 接続ミスを防止&#xa;&#x2713; 再利用が容易&#xa;&#x2713; modport で方向を制御" style="text;html=1;fontSize=12;align=left;verticalAlign=top;fillColor=#C8E6C9;strokeColor=#A5D6A7;rounded=1;arcSize=2;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="900" y="390" width="230" height="80" as="geometry"/>
         </mxCell>
         <!-- Arrow showing improvement -->
-        <mxCell id="24" value="改善" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=3;strokeColor=#4CAF50;fontSize=14;fontStyle=1;fontColor=#4CAF50;" edge="1" parent="1">
+        <mxCell id="24" value="改善" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#4CAF50;strokeColor=#388E3C;width=15;endSize=6;endWidth=25;fontSize=14;fontStyle=1;fontColor=#4CAF50;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="615" y="260" as="sourcePoint"/>
-            <mxPoint x="640" y="260" as="targetPoint"/>
+            <mxPoint x="635" y="260" as="sourcePoint"/>
+            <mxPoint x="675" y="260" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
       </root>

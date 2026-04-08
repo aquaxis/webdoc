@@ -6,7 +6,7 @@ title: "第14章：DPI-C（Direct Programming Interface）"
 
 ## 14.1 この章で学ぶこと
 
-本章では、SystemVerilogと外部プログラミング言語（主にC/C++）を連携させるための**DPI-C（Direct Programming Interface - C）**を中心に、高度なトピックを包括的に解説します。DPI-Cを使うと、SystemVerilogからC関数を呼び出したり、逆にCからSystemVerilogのタスク・関数を呼び出したりすることが可能になります。レガシーな**PLI（Programming Language Interface）**との比較、共有ライブラリを用いたビルドフロー、パラメタライズドクラスやファクトリパターンなどの高度な言語機能、そしてシミュレーション性能を最適化するためのテクニックについても学びます。
+本章では、SystemVerilogと外部プログラミング言語（主にC/C++）を連携させるための**DPI-C（Direct Programming Interface - C）**を中心に、高度なトピックを包括的に解説する。DPI-Cを使うと、SystemVerilogからC関数を呼び出したり、逆にCからSystemVerilogのタスク・関数を呼び出したりすることが可能になる。レガシーな**PLI（Programming Language Interface）**との比較、共有ライブラリを用いたビルドフロー、パラメタライズドクラスやファクトリパターンなどの高度な言語機能、そしてシミュレーション性能を最適化するためのテクニックについても学ぶ。
 
 - **DPI-Cの基本**: `import` / `export` 宣言、データ型マッピング、`pure` / `context` 属性
 - **オープン配列**: C側から動的にSV配列を操作する方法
@@ -21,18 +21,20 @@ title: "第14章：DPI-C（Direct Programming Interface）"
 
 ### 14.2.1 DPI-Cとは
 
-**DPI-C（Direct Programming Interface - C）**は、IEEE 1800規格で定義されたSystemVerilogとC言語間の標準インターフェースです。従来のPLI/VPIと比較して、はるかにシンプルかつ高性能な連携を実現します。
+**DPI-C（Direct Programming Interface - C）**は、IEEE 1800規格で定義されたSystemVerilogとC言語間の標準インターフェースである。従来のPLI/VPIと比較して、はるかにシンプルかつ高性能な連携を実現する。
 
-- **シンプルな宣言**: `import "DPI-C"` / `export "DPI-C"` で関数を宣言するだけで連携可能です
-- **直接呼び出し**: PLIのようなラッパー層を介さず、C関数を直接呼び出します
-- **高い性能**: 関数呼び出しのオーバーヘッドが最小限に抑えられています
-- **双方向通信**: SVからCを呼ぶ（import）だけでなく、CからSVを呼ぶ（export）ことも可能です
+- **シンプルな宣言**: `import "DPI-C"` / `export "DPI-C"` で関数を宣言するだけで連携可能である
+- **直接呼び出し**: PLIのようなラッパー層を介さず、C関数を直接呼び出す
+- **高い性能**: 関数呼び出しのオーバーヘッドが最小限に抑えられている
+- **双方向通信**: SVからCを呼ぶ（import）だけでなく、CからSVを呼ぶ（export）ことも可能である
 
-![DPI-Cのアーキテクチャ](/images/systemverilog-guidebook/ch14_dpi_architecture.drawio.png)
+![図14.1: DPI-Cのアーキテクチャ](/images/systemverilog-guidebook/ch14_dpi_architecture.drawio.png)
 
 ### 14.2.2 import宣言（CをSVから呼び出す）
 
-`import "DPI-C"` 宣言を使うと、C言語で実装された関数をSystemVerilogから呼び出すことができます。
+`import "DPI-C"` 宣言を使うと、C言語で実装された関数をSystemVerilogから呼び出すことができる。
+
+**リスト14.1: DPI-C import宣言の例**
 
 ```systemverilog
 // C関数をSystemVerilogにインポート
@@ -50,7 +52,9 @@ module dpi_import_example;
 endmodule
 ```
 
-対応するC側の実装は以下のとおりです。
+対応するC側の実装は以下のとおりである。
+
+**リスト14.2: DPI-C関数のC実装**
 
 ```c
 #include <stdio.h>
@@ -66,7 +70,9 @@ void c_print_message(const char* msg) { printf("[C] %s\n", msg); }
 
 ### 14.2.3 export宣言（SVをCから呼び出す）
 
-`export "DPI-C"` 宣言を使うと、SystemVerilogで定義した関数やタスクをC言語から呼び出すことができます。
+`export "DPI-C"` 宣言を使うと、SystemVerilogで定義した関数やタスクをC言語から呼び出すことができる。
+
+**リスト14.3: DPI-C export宣言の例**
 
 ```systemverilog
 module dpi_export_example;
@@ -108,7 +114,11 @@ void c_run_test() {
 }
 ```
 
-### 14.2.4 import関数とimportタスクの違い
+**リスト14.4: DPI-C exportのC側実装**
+
+```systemverilog
+
+**表14.1: import関数とimportタスクの違い**
 
 | 特性 | import function | import task |
 |------|----------------|-------------|
@@ -123,7 +133,9 @@ void c_run_test() {
 
 ### 14.3.1 基本データ型の対応関係
 
-SystemVerilogとCの間でデータを受け渡すには、型の対応関係を正確に理解する必要があります。
+SystemVerilogとCの間でデータを受け渡すには、型の対応関係を正確に理解する必要がある。
+
+**表14.2: 基本データ型の対応関係**
 
 | SystemVerilog型 | C型 | ビット幅 | 備考 |
 |----------------|-----|---------|------|
@@ -140,7 +152,9 @@ SystemVerilogとCの間でデータを受け渡すには、型の対応関係を
 
 ### 14.3.2 2値型と4値型
 
-SystemVerilog特有の**2値型（two-state）**と**4値型（four-state）**の区別は、DPI-Cでのデータ受け渡しにおいて重要です。
+SystemVerilog特有の**2値型（two-state）**と**4値型（four-state）**の区別は、DPI-Cでのデータ受け渡しにおいて重要である。
+
+**リスト14.5: C側での2値型・4値型処理**
 
 ```c
 #include "svdpi.h"
@@ -160,6 +174,8 @@ void process_logic_vector(const svLogicVecVal* lv, int width) {
                i, lv[i].aval, lv[i].bval);
 }
 ```
+
+**リスト14.6: SystemVerilog側での2値型・4値型**
 
 ```systemverilog
 import "DPI-C" function void process_bit_vector(
@@ -181,7 +197,9 @@ endmodule
 
 ### 14.3.3 構造体のマッピング
 
-`packed`構造体はビットベクタとして、`unpacked`構造体はC構造体として渡すことができます。
+`packed`構造体はビットベクタとして、`unpacked`構造体はC構造体として渡すことができる。
+
+**リスト14.7: 構造体のマッピング例**
 
 ```systemverilog
 typedef struct packed {
@@ -200,7 +218,7 @@ import "DPI-C" function void process_packed_cmd(input packed_cmd_t cmd);
 import "DPI-C" function void process_unpacked_info(input unpacked_info_t info);
 ```
 
-![DPI-Cデータ型マッピング](/images/systemverilog-guidebook/ch14_dpi_type_mapping.drawio.png)
+![図14.2: DPI-Cデータ型マッピング](/images/systemverilog-guidebook/ch14_dpi_type_mapping.drawio.png)
 
 ---
 
@@ -208,7 +226,9 @@ import "DPI-C" function void process_unpacked_info(input unpacked_info_t info);
 
 ### 14.4.1 pure属性
 
-`pure` 属性は、関数が**副作用を持たない**ことをシミュレータに伝えるための修飾子です。`pure` 関数はグローバル変数やI/Oに触れず、同じ引数に対して常に同じ結果を返す必要があります。
+`pure` 属性は、関数が**副作用を持たない**ことをシミュレータに伝えるための修飾子である。`pure` 関数はグローバル変数やI/Oに触れず、同じ引数に対して常に同じ結果を返す必要がある。
+
+**リスト14.8: pure属性の使用例**
 
 ```systemverilog
 import "DPI-C" pure function int c_max(input int a, input int b);
@@ -221,11 +241,13 @@ int c_max(int a, int b) { return (a > b) ? a : b; }
 double c_sqrt(double x) { return sqrt(x); }
 ```
 
-`pure` 関数を宣言すると、シミュレータは結果のキャッシュや不要な呼び出しの削除などの最適化を適用できます。
+`pure` 関数を宣言すると、シミュレータは結果のキャッシュや不要な呼び出しの削除などの最適化を適用できる。
 
 ### 14.4.2 context属性
 
-`context` 属性は、関数が**シミュレーションコンテキストにアクセスする**ことをシミュレータに伝えます。エクスポートされたSV関数/タスクの呼び出しやVPI関数の使用に必要です。
+`context` 属性は、関数が**シミュレーションコンテキストにアクセスする**ことをシミュレータに伝える。エクスポートされたSV関数/タスクの呼び出しやVPI関数の使用に必要である。
+
+**リスト14.9: context属性の使用例**
 
 ```systemverilog
 export "DPI-C" function sv_get_time;
@@ -247,11 +269,15 @@ void c_log_with_time(const char* msg) {
 
 ### 14.4.3 属性の比較
 
+**表14.3: 属性の比較**
+
 | 属性 | 副作用 | SVコンテキスト | 最適化 | 用途 |
 |------|--------|--------------|--------|------|
 | `pure` | なし | アクセス不可 | 最大限 | 純粋な計算関数 |
 | デフォルト | 許容 | アクセス不可 | 一部可能 | I/O操作等を含む関数 |
 | `context` | 許容 | アクセス可能 | 制限あり | SV export呼び出し、VPI利用 |
+
+![図14.3: pure属性とcontext属性の比較](/images/systemverilog-guidebook/ch14_pure_context.drawio.png)
 
 ---
 
@@ -259,7 +285,9 @@ void c_log_with_time(const char* msg) {
 
 ### 14.5.1 オープン配列とは
 
-**オープン配列（Open Array）**は、配列のサイズを宣言時に固定せず、実行時に決定する仕組みです。異なるサイズの配列を同一のC関数で処理できます。
+**オープン配列（Open Array）**は、配列のサイズを宣言時に固定せず、実行時に決定する仕組みである。異なるサイズの配列を同一のC関数で処理できる。
+
+**リスト14.10: オープン配列の使用例**
 
 ```systemverilog
 import "DPI-C" function void c_sort_array(inout int arr []);
@@ -276,6 +304,8 @@ endmodule
 ```
 
 ### 14.5.2 C側でのオープン配列操作
+
+**リスト14.11: C側でのオープン配列操作**
 
 ```c
 #include "svdpi.h"
@@ -306,6 +336,8 @@ int c_find_max(const svOpenArrayHandle arr) {
 
 ### 14.5.3 オープン配列API一覧
 
+**表14.4: オープン配列API一覧**
+
 | API関数 | 説明 |
 |---------|------|
 | `svSize(h, dim)` | 指定次元のサイズを返す |
@@ -321,7 +353,9 @@ int c_find_max(const svOpenArrayHandle arr) {
 
 ### 14.6.1 PLIの歴史的背景
 
-**PLI（Programming Language Interface）**は、Verilog HDLの初期から存在するC言語インターフェースです。現在はDPI-CおよびVPIに置き換えられていますが、レガシーコードの保守のために基本を押さえておくことは重要です。
+**PLI（Programming Language Interface）**は、Verilog HDLの初期から存在するC言語インターフェースである。現在はDPI-CおよびVPIに置き換えられているが、レガシーコードの保守のために基本を押さえておくことは重要である。
+
+**表14.5: PLIの歴史的背景**
 
 | 世代 | インターフェース | 規格 | 状態 |
 |------|----------------|------|------|
@@ -331,7 +365,9 @@ int c_find_max(const svOpenArrayHandle arr) {
 
 ### 14.6.2 TF/ACCルーチンの概要
 
-TFルーチンはシステムタスク引数へのアクセス、ACCルーチンは設計オブジェクトへのアクセスを提供していました。
+TFルーチンはシステムタスク引数へのアクセス、ACCルーチンは設計オブジェクトへのアクセスを提供していた。
+
+**リスト14.12: TFルーチンの例（レガシー）**
 
 ```c
 #include "veriuser.h"  // TFルーチン用ヘッダ（レガシー）
@@ -347,6 +383,8 @@ int my_display_calltf(int user_data, int reason) {
 ```c
 #include "acc_user.h"  // ACCルーチン用ヘッダ（レガシー）
 
+**リスト14.13: ACCルーチンの例（レガシー）**
+
 // ACCルーチンの例（非推奨）
 void read_signal_value() {
     handle sig;
@@ -359,6 +397,8 @@ void read_signal_value() {
 
 ### 14.6.3 PLIからVPI/DPI-Cへの移行
 
+**表14.6: PLIからVPI/DPI-Cへの移行**
+
 | PLI 1.0 操作 | VPI対応 | DPI-C対応 |
 |-------------|---------|----------|
 | `tf_getp()` / `tf_putp()` | `vpi_get_value()` / `vpi_put_value()` | 関数引数で直接渡す |
@@ -366,7 +406,7 @@ void read_signal_value() {
 | `acc_fetch_value()` | `vpi_get_value()` | 関数の戻り値で受け取る |
 | カスタムシステムタスク | `vpi_register_systf()` | import宣言で同等機能を実現 |
 
-移行時の判断基準は以下のとおりです。
+移行時の判断基準は以下のとおりである。
 
 - **単純な関数呼び出し**: DPI-Cを使用（最もシンプル）
 - **シミュレーション内部オブジェクトへのアクセス**: VPIを使用（次章で詳述）
@@ -378,9 +418,11 @@ void read_signal_value() {
 
 ### 14.7.1 共有ライブラリの作成
 
-DPI-Cで使用するC/C++コードは、共有ライブラリ（`.so` / `.dll`）としてコンパイルし、シミュレータにリンクします。
+DPI-Cで使用するC/C++コードは、共有ライブラリ（`.so` / `.dll`）としてコンパイルし、シミュレータにリンクする。
 
-![DPI-Cビルドフロー](/images/systemverilog-guidebook/ch14_dpi_build_flow.drawio.png)
+![図14.4: DPI-Cビルドフロー](/images/systemverilog-guidebook/ch14_dpi_build_flow.drawio.png)
+
+**リスト14.14: 共有ライブラリの作成**
 
 ```c
 // ファイル: dpi_functions.c
@@ -411,7 +453,9 @@ xrun -sv top.sv -sv_lib dpi_functions.so                  # Xcelium
 
 ### 14.7.2 C++との統合
 
-C++コードを使用する場合は、`extern "C"` ブロックでC言語リンケージを指定する必要があります。
+C++コードを使用する場合は、`extern "C"` ブロックでC言語リンケージを指定する必要がある。
+
+**リスト14.15: C++との統合**
 
 ```c
 // ファイル: dpi_cpp_functions.cpp
@@ -459,7 +503,9 @@ project/
     └── Makefile
 ```
 
-DPI-Cインポート宣言は一箇所にまとめると管理が容易になります。
+DPI-Cインポート宣言は一箇所にまとめると管理が容易になる。
+
+**リスト14.16: DPI-Cインポート宣言のヘッダー**
 
 ```systemverilog
 // ファイル: tb/dpi_imports.svh
@@ -480,7 +526,9 @@ import "DPI-C" context function void c_log_with_time(input string msg);
 
 ### 14.8.1 パラメタライズドクラス
 
-SystemVerilogでは、クラスにパラメータを持たせることで汎用的で再利用性の高い設計が可能です。
+SystemVerilogでは、クラスにパラメータを持たせることで汎用的で再利用性の高い設計が可能である。
+
+**リスト14.17: パラメタライズドクラスの定義**
 
 ```systemverilog
 class Fifo #(type T = int, int DEPTH = 16);
@@ -504,7 +552,9 @@ class Fifo #(type T = int, int DEPTH = 16);
 endclass
 ```
 
-異なる型やサイズでインスタンス化する例です。
+異なる型やサイズでインスタンス化する例を以下に示す。
+
+**リスト14.18: パラメタライズドクラスの使用例**
 
 ```systemverilog
 module parameterized_class_example;
@@ -532,7 +582,9 @@ endmodule
 
 ### 14.8.2 型パラメータの活用
 
-型パラメータを使うと、コンテナクラスやユーティリティクラスを型に依存しない形で実装できます。
+型パラメータを使うと、コンテナクラスやユーティリティクラスを型に依存しない形で実装できる。
+
+**リスト14.19: 型パラメータの活用例**
 
 ```systemverilog
 class Pair #(type T1 = int, type T2 = int);
@@ -558,7 +610,9 @@ endmodule
 
 ### 14.8.3 ファクトリパターン
 
-**ファクトリパターン**は、オブジェクト生成を柔軟に制御するデザインパターンです。テストケースごとに異なるトランザクションを動的に生成する際に活用されます。
+**ファクトリパターン**は、オブジェクト生成を柔軟に制御するデザインパターンである。テストケースごとに異なるトランザクションを動的に生成する際に活用される。
+
+**リスト14.20: ファクトリパターンの実装**
 
 ```systemverilog
 class Transaction;
@@ -616,7 +670,7 @@ module factory_example;
 endmodule
 ```
 
-![ファクトリパターンのクラス図](/images/systemverilog-guidebook/ch14_factory_pattern.drawio.png)
+![図14.5: ファクトリパターンのクラス図](/images/systemverilog-guidebook/ch14_factory_pattern.drawio.png)
 
 ---
 
@@ -624,7 +678,9 @@ endmodule
 
 ### 14.9.1 コンパイル戦略
 
-シミュレーションの性能はコンパイル方法によって大きく変わります。
+シミュレーションの性能はコンパイル方法によって大きく変わる。
+
+**表14.7: コンパイル戦略**
 
 | 戦略 | 説明 | メリット | デメリット |
 |------|------|---------|----------|
@@ -642,7 +698,9 @@ xrun -sv -access +r -64bit -elaborate -f filelist.f
 
 ### 14.9.2 シミュレーション高速化のテクニック
 
-**1. 2値型の活用**: テストベンチでX/Z検出が不要な場合は `bit` を使用します。
+**1. 2値型の活用**: テストベンチでX/Z検出が不要な場合は `bit` を使用する。
+
+**リスト14.21: 2値型による性能向上**
 
 ```systemverilog
 // 性能向上: 4値型（logic）ではなく2値型（bit）を使用
@@ -653,7 +711,9 @@ class FastTransaction;
 endclass
 ```
 
-**2. DPI-Cによる計算オフロード**: 計算量の多い処理をC関数に移すことで大幅な高速化が見込めます。
+**2. DPI-Cによる計算オフロード**: 計算量の多い処理をC関数に移すことで大幅な高速化が見込める。
+
+**リスト14.22: DPI-Cによる計算オフロード（SystemVerilog側）**
 
 ```systemverilog
 // C側のテーブル駆動CRCは SV側のループ実装より高速
@@ -663,6 +723,8 @@ import "DPI-C" pure function int c_crc32_fast(
 ```
 
 ```c
+**リスト14.23: DPI-Cによる計算オフロード（C側）**
+
 int c_crc32_fast(const svOpenArrayHandle data, int len) {
     static unsigned int table[256];
     static int init = 0;
@@ -696,10 +758,10 @@ int c_crc32_fast(const svOpenArrayHandle data, int len) {
 
 ### 14.9.3 DPI-Cの性能に関する注意点
 
-- **`pure` 関数を積極的に使う**: シミュレータによる最適化が可能になります
-- **`context` は必要な場合のみ使う**: コンテキスト保存・復元のオーバーヘッドが発生します
-- **バッチ処理を心がける**: データは配列としてまとめて渡します
-- **C側のメモリ管理に注意**: `malloc`/`free` の呼び出し頻度を最小限に抑えます
+- **`pure` 関数を積極的に使う**: シミュレータによる最適化が可能になる
+- **`context` は必要な場合のみ使う**: コンテキスト保存・復元のオーバーヘッドが発生する
+- **バッチ処理を心がける**: データは配列としてまとめて渡す
+- **C側のメモリ管理に注意**: `malloc`/`free` の呼び出し頻度を最小限に抑える
 
 ---
 
@@ -707,7 +769,9 @@ int c_crc32_fast(const svOpenArrayHandle data, int len) {
 
 ### 14.10.1 Cリファレンスモデルとの連携
 
-RTLの出力をCで記述したリファレンスモデルと比較する手法は、ハードウェア検証の基本です。
+RTLの出力をCで記述したリファレンスモデルと比較する手法は、ハードウェア検証の基本である。
+
+**リスト14.24: DPI-Cを活用したリファレンスモデル検証**
 
 ```systemverilog
 import "DPI-C" function void c_encrypt_init(input bit [127:0] key);
@@ -749,6 +813,8 @@ endmodule
 ```
 
 ```c
+**リスト14.25: リファレンスモデルのC実装**
+
 #include <string.h>
 #include "svdpi.h"
 
@@ -773,7 +839,9 @@ void c_encrypt_block(const svBitVecVal* plaintext, svBitVecVal* ciphertext) {
 
 ### 14.10.2 バイナリファイルI/O
 
-SystemVerilog標準のファイルI/Oでは対応しきれない操作を、DPI-Cの `chandle` を使って実現します。
+SystemVerilog標準のファイルI/Oでは対応しきれない操作を、DPI-Cの `chandle` を使って実現する。
+
+**リスト14.26: バイナリファイルI/Oの例**
 
 ```systemverilog
 import "DPI-C" function chandle c_fopen(input string filename, input string mode);
@@ -812,6 +880,8 @@ endmodule
 
 ### 14.11.1 よくある問題と対処法
 
+**表14.8: よくある問題と対処法**
+
 | 問題 | 原因 | 対処法 |
 |------|------|--------|
 | リンクエラー（undefined symbol） | 関数名の不一致、`extern "C"` の欠落 | 関数名とリンケージの確認 |
@@ -820,6 +890,8 @@ endmodule
 | メモリリーク | C側のメモリ解放漏れ | Valgrindでメモリ分析 |
 
 ### 14.11.2 デバッグ手法
+
+**リスト14.27: デバッグ用ログマクロ**
 
 ```c
 // デバッグ用ログマクロ
@@ -839,28 +911,30 @@ int c_process_data(const svBitVecVal* data, int width) {
 
 ### 14.11.3 関数名のマングリング制御
 
-C側の関数名をSystemVerilog側と異なる名前にマッピングすることも可能です。
+C側の関数名をSystemVerilog側と異なる名前にマッピングすることも可能である。
+
+**リスト14.28: 関数名のマッピング**
 
 ```systemverilog
 // C側では c_internal_add が呼ばれるが、SV側では my_add として使用
 import "DPI-C" c_internal_add = function int my_add(input int a, input int b);
 ```
 
-この機能は、既存のCライブラリの関数名がSystemVerilogの予約語と衝突する場合などに有用です。
+この機能は、既存のCライブラリの関数名がSystemVerilogの予約語と衝突する場合などに有用である。
 
 ---
 
 ## 14.12 まとめ
 
-本章では、SystemVerilogの高度なトピックとして、DPI-Cを中心にC/C++との連携手法と高度な言語機能について学びました。
+本章では、SystemVerilogの高度なトピックとして、DPI-Cを中心にC/C++との連携手法と高度な言語機能について学んだ。
 
-1. **DPI-C**は `import "DPI-C"` / `export "DPI-C"` により、SystemVerilogとC言語間の双方向関数呼び出しを実現する標準インターフェースです。
-2. **データ型マッピング**では、`int`・`real`・`string` などの基本型に加え、`svBitVecVal`（2値）・`svLogicVecVal`（4値）によるビットベクタの受け渡しが可能です。
-3. **`pure` 属性**は副作用のない関数に付与し最適化を可能にします。**`context` 属性**はSVエクスポート関数やVPIを呼び出す関数に必要です。
-4. **オープン配列**を使うことで、サイズの異なる配列を同一のC関数で処理できます。
-5. **PLI（TF/ACC）**はレガシーインターフェースであり、新規開発ではDPI-CまたはVPIを使用すべきです。
-6. **共有ライブラリ**としてC/C++コードをコンパイルし、シミュレータにリンクするビルドフローの理解が実践では不可欠です。
-7. **パラメタライズドクラス**と**ファクトリパターン**により、汎用的で柔軟なクラス設計が実現できます。
-8. **性能最適化**では、2値型の活用、DPI-Cによる計算オフロード、不要なアクティビティの削減が有効です。
+1. **DPI-C**は `import "DPI-C"` / `export "DPI-C"` により、SystemVerilogとC言語間の双方向関数呼び出しを実現する標準インターフェースである。
+2. **データ型マッピング**では、`int`・`real`・`string` などの基本型に加え、`svBitVecVal`（2値）・`svLogicVecVal`（4値）によるビットベクタの受け渡しが可能である。
+3. **`pure` 属性**は副作用のない関数に付与し最適化を可能にする。**`context` 属性**はSVエクスポート関数やVPIを呼び出す関数に必要である。
+4. **オープン配列**を使うことで、サイズの異なる配列を同一のC関数で処理できる。
+5. **PLI（TF/ACC）**はレガシーインターフェースであり、新規開発ではDPI-CまたはVPIを使用すべきである。
+6. **共有ライブラリ**としてC/C++コードをコンパイルし、シミュレータにリンクするビルドフローの理解が実践では不可欠である。
+7. **パラメタライズドクラス**と**ファクトリパターン**により、汎用的で柔軟なクラス設計が実現できる。
+8. **性能最適化**では、2値型の活用、DPI-Cによる計算オフロード、不要なアクティビティの削減が有効である。
 
-次章では、VPI（Verilog Procedural Interface）を使ったシミュレーション内部オブジェクトへのアクセスと、実践的なデバッグ技法について学びます。
+次章では、VPI（Verilog Procedural Interface）を使ったシミュレーション内部オブジェクトへのアクセスと、実践的なデバッグ技法について学ぶ。

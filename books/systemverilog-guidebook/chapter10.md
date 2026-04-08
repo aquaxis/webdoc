@@ -1,12 +1,12 @@
 ---
-title: "第10章：制約付きランダム検証（CRV）"
+title: "第 10 章：制約付きランダム検証（CRV）"
 ---
 
-# 第10章：制約付きランダム検証（CRV）
+# 第 10 章：制約付きランダム検証（CRV）
 
 ## 10.1 この章で学ぶこと
 
-本章では、SystemVerilogの最も強力な検証機能の一つである**制約付きランダム検証（Constrained Random Verification, CRV）**について解説します。手動でテストパターンを記述する代わりに、制約条件を満たすランダムな刺激を自動生成することで、人間が思いつかないようなコーナーケースを効率的に検出できます。`rand`/`randc`修飾子、制約ブロック（`constraint`）、インライン制約（`randomize() with`）の使い方を体系的に学びます。
+本章では、SystemVerilogの最も強力な検証機能の一つである**制約付きランダム検証（Constrained Random Verification, CRV）**について解説する。手動でテストパターンを記述する代わりに、制約条件を満たすランダムな刺激を自動生成することで、人間が思いつかないようなコーナーケースを効率的に検出できる。`rand`/`randc`修飾子、制約ブロック（`constraint`）、インライン制約（`randomize() with`）の使い方を体系的に学ぶ。
 
 ---
 
@@ -14,7 +14,9 @@ title: "第10章：制約付きランダム検証（CRV）"
 
 ### 10.2.1 rand 修飾子
 
-`rand` を付けたプロパティは、`randomize()` メソッドが呼ばれるたびにランダムな値が割り当てられます。制約がなければ、値の範囲内で均一な分布を持ちます。
+`rand` を付けたプロパティは、`randomize()` メソッドが呼ばれるたびにランダムな値が割り当てられる。制約がなければ、値の範囲内で均一な分布を持つ。
+
+**リスト10.1: rand修飾子によるランダム変数**
 
 ```systemverilog
 class Packet;
@@ -50,7 +52,9 @@ endmodule
 
 ### 10.2.2 randc 修飾子
 
-`randc`（random cyclic）は**巡回ランダム**です。すべての値を一巡するまで同じ値は繰り返されません。カードのシャッフルに例えると分かりやすいでしょう。
+`randc`（random cyclic）は**巡回ランダム**である。すべての値を一巡するまで同じ値は繰り返されない。カードのシャッフルに例えると分かりやすいであろう。
+
+**リスト10.2: randc修飾子による巡回ランダム**
 
 ```systemverilog
 class DeckOfCards;
@@ -77,6 +81,8 @@ endmodule
 
 ### 10.2.3 rand と randc の比較
 
+**表10.1: randとrandcの比較**
+
 | 特性 | `rand` | `randc` |
 |------|--------|---------|
 | 値の分布 | 均一分布（重複あり） | 巡回（全値を一巡するまで重複なし） |
@@ -84,13 +90,17 @@ endmodule
 | パフォーマンス | 高速 | 値域が大きいと遅くなる場合がある |
 | 値域の推奨サイズ | 制限なし | 小さい値域に推奨 |
 
+![図10.1: rand と randc の動作比較](/images/systemverilog-guidebook/ch10_rand_randc.drawio.png)
+
 ---
 
 ## 10.3 制約ブロック（constraint）
 
 ### 10.3.1 基本的な制約
 
-`constraint` ブロックは、ランダム変数に対する条件を宣言的に記述します。制約ソルバが条件を満たす値を自動的に見つけ出します。
+`constraint` ブロックは、ランダム変数に対する条件を宣言的に記述する。制約ソルバが条件を満たす値を自動的に見つけ出す。
+
+**リスト10.3: 基本的な制約ブロック**
 
 ```systemverilog
 class BusTransaction;
@@ -116,7 +126,9 @@ endclass
 
 ### 10.3.2 inside 演算子
 
-`inside` は、値が指定されたリストまたは範囲内にあることを制約します。
+`inside` は、値が指定されたリストまたは範囲内にあることを制約する。
+
+**リスト10.4: inside演算子による範囲制約**
 
 ```systemverilog
 class Config;
@@ -142,9 +154,13 @@ class Config;
 endclass
 ```
 
+![図10.2: inside 演算子の動作](/images/systemverilog-guidebook/ch10_inside_operator.drawio.png)
+
 ### 10.3.3 dist（分布制約）
 
-`dist` は、値ごとに重み（確率）を指定できます。`:=` は各要素に同じ重みを、`:/` は範囲全体で重みを分配します。
+`dist` は、値ごとに重み（確率）を指定できる。`:=` は各要素に同じ重みを、`:/` は範囲全体で重みを分配する。
+
+**リスト10.5: dist演算子による確率分布制御**
 
 ```systemverilog
 class ErrorInjector;
@@ -172,13 +188,15 @@ class ErrorInjector;
 endclass
 ```
 
-`:=` と `:/` の違いを図で示します：
+`:=` と `:/` の違いを以下の図に示す。
 
-![dist演算子の:=と:/の違い](/images/systemverilog-guidebook/ch10_dist_operator.drawio.png)
+![図10.3: dist演算子の:=と:/の違い](/images/systemverilog-guidebook/ch10_dist_operator.drawio.png)
 
 ### 10.3.4 solve...before
 
-`solve...before` は制約ソルバに対して、変数の解決順序を指示します。ある変数の値が他の変数の制約に影響する場合に使用します。
+`solve...before` は制約ソルバに対して、変数の解決順序を指示する。ある変数の値が他の変数の制約に影響する場合に使用する。
+
+**リスト10.6: solve...beforeによる解決順序の制御**
 
 ```systemverilog
 class ConditionalPacket;
@@ -197,11 +215,13 @@ class ConditionalPacket;
 endclass
 ```
 
-`solve...before` がない場合、ソルバは `is_long` と `length` を同時に解こうとし、確率分布が偏る可能性があります。`solve is_long before length` を指定すると、まず `is_long` が50%/50%で決まり、その後 `length` が対応する範囲でランダム化されます。
+`solve...before` がない場合、ソルバは `is_long` と `length` を同時に解こうとし、確率分布が偏る可能性がある。`solve is_long before length` を指定すると、まず `is_long` が50%/50%で決まり、その後 `length` が対応する範囲でランダム化される。
 
 ### 10.3.5 条件付き制約（Implication）
 
-`->` 演算子（含意）や `if-else` を使って条件付きの制約を記述できます。
+`->` 演算子（含意）や `if-else` を使って条件付きの制約を記述できる。
+
+**リスト10.7: 条件付き制約の使用例**
 
 ```systemverilog
 class ProtocolPacket;
@@ -230,13 +250,17 @@ class ProtocolPacket;
 endclass
 ```
 
+![図10.4: 条件付き制約（constraint ... if）](/images/systemverilog-guidebook/ch10_conditional_constraint.drawio.png)
+
 ---
 
 ## 10.4 制約の制御
 
 ### 10.4.1 制約の有効/無効
 
-`constraint_mode()` メソッドで制約の有効/無効を動的に切り替えられます。
+`constraint_mode()` メソッドで制約の有効/無効を動的に切り替えられる。
+
+**リスト10.8: constraint_modeによる制約の制御**
 
 ```systemverilog
 class FlexibleTransaction;
@@ -274,7 +298,9 @@ endmodule
 
 ### 10.4.2 ランダム変数の有効/無効
 
-`rand_mode()` メソッドで個別のランダム変数のランダム化を制御できます。
+`rand_mode()` メソッドで個別のランダム変数のランダム化を制御できる。
+
+**リスト10.9: rand_modeによるランダム変数の制御**
 
 ```systemverilog
 module test;
@@ -292,7 +318,9 @@ endmodule
 
 ## 10.5 インライン制約（randomize() with）
 
-`randomize() with { ... }` を使うと、クラス定義を変更せずに追加の制約を指定できます。テストシナリオごとに異なる制約を適用する場合に非常に便利です。
+`randomize() with { ... }` を使うと、クラス定義を変更せずに追加の制約を指定できる。テストシナリオごとに異なる制約を適用する場合に非常に便利である。
+
+**リスト10.10: インライン制約の使用例**
 
 ```systemverilog
 class Packet;
@@ -342,7 +370,9 @@ endmodule
 
 ## 10.6 pre_randomize と post_randomize
 
-`randomize()` の前後に自動的に呼ばれるコールバックメソッドを定義できます。
+`randomize()` の前後に自動的に呼ばれるコールバックメソッドを定義できる。
+
+**リスト10.11: pre_randomizeとpost_randomizeの使用例**
 
 ```systemverilog
 class SmartPacket;
@@ -381,6 +411,8 @@ endclass
 
 ### 10.7.1 メモリアクセスパターンの生成
 
+**リスト10.12: メモリアクセスパターンの生成例**
+
 ```systemverilog
 class MemoryAccess;
     rand bit [31:0] addr;
@@ -411,6 +443,8 @@ endclass
 ```
 
 ### 10.7.2 プロトコルシーケンスの生成
+
+**リスト10.13: プロトコルシーケンスの生成例**
 
 ```systemverilog
 class UartConfig;
@@ -451,18 +485,20 @@ class UartConfig;
 endclass
 ```
 
+![図10.5: ランダム化のワークフロー](/images/systemverilog-guidebook/ch10_randomize_workflow.drawio.png)
+
 ---
 
 ## 10.8 まとめ
 
-本章では、SystemVerilogの制約付きランダム検証（CRV）について学びました。
+本章では、SystemVerilogの制約付きランダム検証（CRV）について学んだ。
 
-1. **`rand`** は均一分布のランダム変数、**`randc`** は巡回（重複なし）のランダム変数を宣言します。
-2. **`constraint` ブロック**で制約条件を宣言的に記述します。`inside`、`dist`、`solve...before`、条件付き制約（`->`/`if-else`）を使い分けます。
-3. **`dist` 演算子**で値の出現確率を制御できます。`:=` は各値に同じ重み、`:/` は範囲に重みを分配します。
-4. **`solve...before`** で変数の解決順序を制御し、確率分布の偏りを防ぎます。
-5. **インライン制約（`randomize() with`）**でテストシナリオごとに柔軟な制約を追加できます。
-6. **`constraint_mode()`** と **`rand_mode()`** で制約やランダム変数の有効/無効を動的に制御できます。
-7. **`pre_randomize()` / `post_randomize()`** でランダム化前後のカスタム処理が可能です。
+1. **`rand`** は均一分布のランダム変数、**`randc`** は巡回（重複なし）のランダム変数を宣言する。
+2. **`constraint` ブロック**で制約条件を宣言的に記述する。`inside`、`dist`、`solve...before`、条件付き制約（`->`/`if-else`）を使い分ける。
+3. **`dist` 演算子**で値の出現確率を制御できる。`:=` は各値に同じ重み、`:/` は範囲に重みを分配する。
+4. **`solve...before`** で変数の解決順序を制御し、確率分布の偏りを防ぐ。
+5. **インライン制約（`randomize() with`）**でテストシナリオごとに柔軟な制約を追加できる。
+6. **`constraint_mode()`** と **`rand_mode()`** で制約やランダム変数の有効/無効を動的に制御できる。
+7. **`pre_randomize()` / `post_randomize()`** でランダム化前後のカスタム処理が可能である。
 
-次章では、ランダム検証を支えるもう一つの重要な機能——プロセス制御と同期について学びます。
+次章では、ランダム検証を支えるもう一つの重要な機能――プロセス制御と同期について学ぶ。

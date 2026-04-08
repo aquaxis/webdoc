@@ -1,101 +1,83 @@
-<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+<mxfile host="app.diagrams.net" modified="2026-04-08T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
   <diagram name="Page-1" id="page1">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
         <mxCell id="2" value="&lt;b&gt;オープンソースシミュレータ比較（Verilator / Icarus Verilog）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="230" y="20" width="550" height="40" as="geometry"/>
+          <mxGeometry x="200" y="20" width="560" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="3" value="&lt;b&gt;Verilator&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="120" y="80" width="320" height="340" as="geometry"/>
+        <mxCell id="3" value="&lt;b&gt;Verilator&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="400" height="300" as="geometry"/>
         </mxCell>
-        <mxCell id="4" value="&lt;b&gt;Icarus Verilog&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="520" y="80" width="320" height="340" as="geometry"/>
+        <mxCell id="4" value="&lt;b&gt;Icarus Verilog&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="400" height="300" as="geometry"/>
         </mxCell>
-        <mxCell id="5" value="&lt;b&gt;特徴&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="120" width="60" height="20" as="geometry"/>
+        <mxCell id="5" value="&lt;b&gt;特徴&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="115" width="60" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="6" value="• C++/SystemCベース高速シミュレータ&lt;br&gt;• 2値シミュレーション（0と1のみ）&lt;br&gt;• 合成可能RTLに特化&lt;br&gt;• Lint機能が優秀&lt;br&gt;• RISC-V等OSSで広く採用" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="140" y="145" width="240" height="80" as="geometry"/>
+        <mxCell id="6" value="・C++ / SystemC ベース高速シミュレータ&lt;br&gt;・2 値シミュレーション（0 と 1 のみ）&lt;br&gt;・合成可能 RTL に特化&lt;br&gt;・Lint 機能が優秀&lt;br&gt;・RISC-V 等 OSS プロジェクトで広く採用" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="145" width="340" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="7" value="&lt;b&gt;特徴&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="120" width="60" height="20" as="geometry"/>
+        <mxCell id="7" value="&lt;b&gt;特徴&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="115" width="60" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="8" value="• 軽量でインストール容易&lt;br&gt;• 4値シミュレーション対応&lt;br&gt;• Verilog-2005サポート充実&lt;br&gt;• VPI対応（C連携可能）&lt;br&gt;• 学習用として歴史あり" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="540" y="145" width="240" height="80" as="geometry"/>
+        <mxCell id="8" value="・軽量でインストール容易&lt;br&gt;・4 値シミュレーション対応&lt;br&gt;・Verilog-2005 サポート充実&lt;br&gt;・VPI 対応（C 連携可能）&lt;br&gt;・学習用として歴史あり" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="145" width="340" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="9" value="&lt;b&gt;制限事項&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffdddd;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="240" width="80" height="20" as="geometry"/>
+        <mxCell id="9" value="&lt;b&gt;制限事項&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffdddd;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="255" width="90" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="10" value="✗ 4値論理（x, z）非対応&lt;br&gt;✗ fork-join等の並行制御が限定的&lt;br&gt;✗ タイミング制御が限定的&lt;br&gt;✗ UVMは部分的サポート" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="140" y="265" width="250" height="60" as="geometry"/>
+        <mxCell id="10" value="✗ 4 値論理（x, z）非対応&lt;br&gt;✗ fork-join 等の並行制御が限定的&lt;br&gt;✗ UVM は部分的サポート" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="285" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="11" value="&lt;b&gt;制限事項&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffdddd;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="240" width="80" height="20" as="geometry"/>
+        <mxCell id="11" value="&lt;b&gt;制限事項&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#ffdddd;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="255" width="90" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="12" value="✗ クラス・制約・アサーション非対応&lt;br&gt;✗ 大規模設計では低速&lt;br&gt;✗ UVM非サポート&lt;br&gt;✗ 新規格対応が遅い" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="540" y="265" width="250" height="60" as="geometry"/>
+        <mxCell id="12" value="✗ クラス・制約・アサーション非対応&lt;br&gt;✗ 大規模設計では低速&lt;br&gt;✗ UVM 非サポート" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="285" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="13" value="&lt;b&gt;主な用途&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="340" width="80" height="20" as="geometry"/>
-        </mxCell>
-        <mxCell id="14" value="RTL検証・CI/CD&lt;br&gt;OSSプロジェクト" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="140" y="365" width="140" height="30" as="geometry"/>
-        </mxCell>
-        <mxCell id="15" value="&lt;b&gt;主な用途&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#f5f5f5;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="340" width="80" height="20" as="geometry"/>
-        </mxCell>
-        <mxCell id="16" value="学習・小規模設計&lt;br&gt;4値論理確認" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="540" y="365" width="140" height="30" as="geometry"/>
-        </mxCell>
-        <mxCell id="17" value="&lt;b&gt;速度比較（相対的）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="350" y="440" width="150" height="30" as="geometry"/>
+        <mxCell id="17" value="&lt;b&gt;シミュレーション速度比較（相対的）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="400" width="280" height="30" as="geometry"/>
         </mxCell>
         <mxCell id="18" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#f5f5f5;" vertex="1" parent="1">
-          <mxGeometry x="120" y="480" width="720" height="60" as="geometry"/>
+          <mxGeometry x="100" y="440" width="760" height="90" as="geometry"/>
         </mxCell>
-        <mxCell id="19" value="Verilator" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#dae8fc;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="495" width="70" height="20" as="geometry"/>
+        <mxCell id="19" value="&lt;b&gt;Verilator&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="450" width="80" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="20" value="Icarus" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#d5e8d4;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="520" width="70" height="20" as="geometry"/>
+        <mxCell id="20" value="&lt;b&gt;Icarus&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="480" width="80" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="21" value="商用" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#fff2cc;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="545" width="70" height="20" as="geometry"/>
+        <mxCell id="21" value="&lt;b&gt;商用&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="510" width="80" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="22" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+        <mxCell id="25" value="" style="endArrow=classic;html=1;strokeWidth=4;strokeColor=#6c8ebf;fillColor=#dae8fc;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="510" as="sourcePoint"/>
-            <mxPoint x="820" y="510" as="targetPoint"/>
+            <mxPoint x="200" y="462" as="sourcePoint"/>
+            <mxPoint x="780" y="462" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="23" value="低速" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="220" y="480" width="40" height="20" as="geometry"/>
-        </mxCell>
-        <mxCell id="24" value="高速" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="780" y="480" width="40" height="20" as="geometry"/>
-        </mxCell>
-        <mxCell id="25" value="" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#6c8ebf;fillColor=#dae8fc;" edge="1" parent="1">
+        <mxCell id="26" value="" style="endArrow=classic;html=1;strokeWidth=4;strokeColor=#82b366;fillColor=#d5e8d4;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="505" as="sourcePoint"/>
-            <mxPoint x="750" y="505" as="targetPoint"/>
+            <mxPoint x="200" y="492" as="sourcePoint"/>
+            <mxPoint x="430" y="492" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="26" value="" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#82b366;fillColor=#d5e8d4;" edge="1" parent="1">
+        <mxCell id="27" value="" style="endArrow=classic;html=1;strokeWidth=4;strokeColor=#d6b656;fillColor=#fff2cc;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="530" as="sourcePoint"/>
-            <mxPoint x="450" y="530" as="targetPoint"/>
+            <mxPoint x="200" y="522" as="sourcePoint"/>
+            <mxPoint x="620" y="522" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="27" value="" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#d6b656;fillColor=#fff2cc;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="555" as="sourcePoint"/>
-            <mxPoint x="650" y="555" as="targetPoint"/>
-          </mxGeometry>
+        <mxCell id="23" value="低速" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="195" y="535" width="50" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="28" value="Verilatorは桁違いに高速" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="600" y="480" width="140" height="20" as="geometry"/>
+        <mxCell id="24" value="高速" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="535" width="50" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="Verilator は桁違いに高速" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="448" width="190" height="25" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

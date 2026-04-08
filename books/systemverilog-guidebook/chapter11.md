@@ -1,22 +1,24 @@
 ---
-title: "第11章：プロセス制御と同期"
+title: "第 11 章：プロセス制御と同期"
 ---
 
-# 第11章：プロセス制御と同期
+# 第 11 章：プロセス制御と同期
 
 ## 11.1 この章で学ぶこと
 
-本章では、SystemVerilogにおける**並列実行（fork-join）**と**同期プリミティブ（event, semaphore, mailbox）**について解説します。検証環境では、複数のプロセスが同時に動作し互いに連携する必要があります。ドライバがデータを送信しながらモニタが監視し、スコアボードが結果を比較する——こうした並列処理と同期の仕組みは、高品質なテストベンチの構築に不可欠です。
+本章では、 SystemVerilog における**並列実行（ fork-join ）**と**同期プリミティブ（ event, semaphore, mailbox ）**について解説する。検証環境では、複数のプロセスが同時に動作し互いに連携する必要がある。ドライバがデータを送信しながらモニタが監視し、スコアボードが結果を比較する——こうした並列処理と同期の仕組みは、高品質なテストベンチの構築に不可欠である。
 
 ---
 
-## 11.2 並列実行（fork-join）
+## 11.2 並列実行（ fork-join ）
 
-### 11.2.1 fork-join の3つのバリエーション
+### 11.2.1 fork-join の 3 つのバリエーション
 
-SystemVerilogの `fork` ブロックは、内部の各文を独立したプロセス（スレッド）として並列に実行します。終了条件に応じて3つのバリエーションがあります。
+SystemVerilog の `fork` ブロックは、内部の各文を独立したプロセス（スレッド）として並列に実行する。終了条件に応じて 3 つのバリエーションがある。
 
-#### fork-join：全プロセスの完了を待つ
+#### fork-join ：全プロセスの完了を待つ
+
+**リスト11.1: fork-joinによる全プロセスの待機**
 
 ```systemverilog
 initial begin
@@ -39,7 +41,9 @@ initial begin
 end
 ```
 
-#### fork-join_any：いずれかのプロセスの完了で続行
+#### fork-join_any ：いずれかのプロセスの完了で続行
+
+**リスト11.2: fork-join_anyによるいずれかの完了待機**
 
 ```systemverilog
 initial begin
@@ -58,7 +62,9 @@ initial begin
 end
 ```
 
-#### fork-join_none：即座に続行（バックグラウンド実行）
+#### fork-join_none ：即座に続行（バックグラウンド実行）
+
+**リスト11.3: fork-join_noneによるバックグラウンド実行**
 
 ```systemverilog
 initial begin
@@ -87,17 +93,21 @@ end
 
 ### 11.2.2 比較表
 
+**表11.1: fork-joinの比較**
+
 | バリエーション | 待機条件 | 主な用途 |
 |--------------|---------|---------|
 | `fork-join` | **全て**のプロセスが完了 | 並列操作の完了を待つ |
 | `fork-join_any` | **いずれか**のプロセスが完了 | タイムアウト付き待機、レース検出 |
 | `fork-join_none` | **待たない**（即座に続行） | バックグラウンド監視の起動 |
 
-![fork-joinの3つのバリエーション](/images/systemverilog-guidebook/ch11_fork_join_variants.drawio.png)
+![図11.1: fork-join の 3 つのバリエーション](/images/systemverilog-guidebook/ch11_fork_join_variants.drawio.png)
 
 ### 11.2.3 実践例：タイムアウト付きトランザクション
 
-`fork-join_any` を使った典型的なパターンがタイムアウト検出です。
+`fork-join_any` を使った典型的なパターンがタイムアウト検出である。
+
+**リスト11.4: タイムアウト付きトランザクション**
 
 ```systemverilog
 task automatic wait_for_response(output bit timeout_flag);
@@ -123,7 +133,9 @@ endtask
 
 ### 11.3.1 wait fork
 
-`wait fork` は、現在のスコープで起動された全ての子プロセスが完了するまで待機します。
+`wait fork` は、現在のスコープで起動された全ての子プロセスが完了するまで待機する。
+
+**リスト11.5: wait forkによる全プロセスの完了待機**
 
 ```systemverilog
 task automatic run_all_tests();
@@ -146,7 +158,9 @@ endtask
 
 ### 11.3.2 disable fork
 
-`disable fork` は、現在のスコープから起動された全ての子プロセスを強制的に終了させます。
+`disable fork` は、現在のスコープから起動された全ての子プロセスを強制的に終了させる。
+
+**リスト11.6: disable forkによるプロセスの強制終了**
 
 ```systemverilog
 task automatic test_with_cleanup();
@@ -173,7 +187,9 @@ endtask
 
 ### 11.3.3 disable fork の注意点
 
-`disable fork` は現在のスコープから起動された**全ての**子プロセスを停止するため、意図しないプロセスまで停止してしまう危険があります。これを防ぐために、`fork-join` で囲むパターンが推奨されます。
+`disable fork` は現在のスコープから起動された**全ての**子プロセスを停止するため、意図しないプロセスまで停止してしまう危険がある。これを防ぐために、`fork-join` で囲むパターンが推奨される。
+
+**リスト11.7: disable forkの安全な使用パターン**
 
 ```systemverilog
 task automatic safe_timeout_task();
@@ -193,13 +209,17 @@ task automatic safe_timeout_task();
 endtask
 ```
 
+![図11.2: wait fork と disable fork の動作](/images/systemverilog-guidebook/ch11_wait_disable_fork.drawio.png)
+
 ---
 
 ## 11.4 同期プリミティブ
 
-### 11.4.1 event（イベント）
+### 11.4.1 event （イベント）
 
-`event` は、プロセス間のシグナリングに使用するシンプルな同期メカニズムです。あるプロセスがイベントをトリガし、別のプロセスがそのイベントを待ちます。
+`event` は、プロセス間のシグナリングに使用するシンプルな同期メカニズムである。あるプロセスがイベントをトリガし、別のプロセスがそのイベントを待つ。
+
+**リスト11.8: eventによるプロセス間通知**
 
 ```systemverilog
 module event_example;
@@ -229,7 +249,9 @@ endmodule
 
 #### triggered プロパティ
 
-`@` によるイベント待ちはイベントが発火する「瞬間」を捉える必要がありますが、`triggered` プロパティを使うと同一タイムステップ内で発火済みかどうかを判定できます。
+`@` によるイベント待ちはイベントが発火する「瞬間」を捉える必要があるが、`triggered` プロパティを使うと同一タイムステップ内で発火済みかどうかを判定できる。
+
+**リスト11.9: triggeredプロパティの使用**
 
 ```systemverilog
 event e;
@@ -241,9 +263,13 @@ event e;
 wait(e.triggered);  // 同一タイムステップで既に発火済みならすぐ進む
 ```
 
-### 11.4.2 semaphore（セマフォ）
+![図11.3: イベントによる同期メカニズム](/images/systemverilog-guidebook/ch11_event_sync.drawio.png)
 
-`semaphore` は、共有リソースへのアクセスを制御するための同期メカニズムです。鍵（key）の概念を使い、鍵を取得（`get`）できたプロセスだけがリソースにアクセスできます。
+### 11.4.2 semaphore （セマフォ）
+
+`semaphore` は、共有リソースへのアクセスを制御するための同期メカニズムである。鍵（ key ）の概念を使い、鍵を取得（`get`）できたプロセスだけがリソースにアクセスできる。
+
+**リスト11.10: semaphoreによるリソース排他制御**
 
 ```systemverilog
 module semaphore_example;
@@ -272,12 +298,16 @@ endmodule
 
 #### セマフォの主なメソッド
 
+**表11.2: セマフォの主なメソッド**
+
 | メソッド | 説明 |
 |---------|------|
 | `new(int keyCount)` | 鍵の初期数を指定して生成 |
 | `get(int count=1)` | 鍵を取得（ブロッキング） |
 | `put(int count=1)` | 鍵を返却 |
-| `try_get(int count=1)` | 鍵の取得を試みる（ノンブロッキング、成功で1を返す） |
+| `try_get(int count=1)` | 鍵の取得を試みる（ノンブロッキング、成功で 1 を返す） |
+
+**リスト11.11: try_getによるノンブロッキングアクセス**
 
 ```systemverilog
 // try_getを使ったノンブロッキングアクセス
@@ -292,9 +322,13 @@ task automatic try_bus_access(string name);
 endtask
 ```
 
-### 11.4.3 mailbox（メールボックス）
+![図11.4: セマフォによる排他制御](/images/systemverilog-guidebook/ch11_semaphore.drawio.png)
 
-`mailbox` は、プロセス間でデータを安全に受け渡すためのFIFO（先入れ先出し）キューです。プロデューサ・コンシューマパターンの実装に最適です。
+### 11.4.3 mailbox （メールボックス）
+
+`mailbox` は、プロセス間でデータを安全に受け渡すための FIFO （先入れ先出し）キューである。プロデューサ・コンシューマパターンの実装に最適である。
+
+**リスト11.12: mailboxによるプロデューサ・コンシューマパターン**
 
 ```systemverilog
 class Transaction;
@@ -345,18 +379,20 @@ endmodule
 
 #### メールボックスの主なメソッド
 
+**表11.3: メールボックスの主なメソッド**
+
 | メソッド | 説明 |
 |---------|------|
-| `new(int bound=0)` | 生成（boundが0なら無制限） |
+| `new(int bound=0)` | 生成（ bound が 0 なら無制限） |
 | `put(item)` | データを格納（満杯ならブロック） |
 | `get(ref item)` | データを取り出し（空ならブロック） |
 | `try_put(item)` | 格納を試みる（ノンブロッキング） |
 | `try_get(ref item)` | 取り出しを試みる（ノンブロッキング） |
 | `peek(ref item)` | 先頭のデータを見る（取り出さない） |
-| `try_peek(ref item)` | peekのノンブロッキング版 |
+| `try_peek(ref item)` | peek のノンブロッキング版 |
 | `num()` | 格納されているデータ数を返す |
 
-![mailboxのプロデューサ・コンシューマパターン](/images/systemverilog-guidebook/ch11_mailbox_pattern.drawio.png)
+![図11.5: mailbox のプロデューサ・コンシューマパターン](/images/systemverilog-guidebook/ch11_mailbox_pattern.drawio.png)
 
 ---
 
@@ -364,16 +400,20 @@ endmodule
 
 ### 11.5.1 比較表
 
+**表11.4: 同期プリミティブの比較**
+
 | 特性 | event | semaphore | mailbox |
 |------|-------|-----------|---------|
 | 目的 | 通知・シグナリング | リソース排他制御 | データの受け渡し |
-| データ転送 | なし | なし | あり（FIFO） |
+| データ転送 | なし | なし | あり（ FIFO ） |
 | ブロッキング | `@` / `wait` | `get` | `get` / `put` |
-| 典型的な用途 | 状態変化の通知 | バスアクセスの排他 | Driver-Sequencer間通信 |
+| 典型的な用途 | 状態変化の通知 | バスアクセスの排他 | Driver-Sequencer 間通信 |
 
 ### 11.5.2 検証環境での組み合わせ例
 
-実際の検証環境では、これらのプリミティブを組み合わせて使います。
+実際の検証環境では、これらのプリミティブを組み合わせて使用する。
+
+**リスト11.13: 検証環境での同期プリミティブの組み合わせ**
 
 ```systemverilog
 class VerificationEnv;
@@ -446,11 +486,13 @@ endclass
 
 ---
 
-## 11.6 細粒度プロセス制御（fine-grain process control）
+## 11.6 細粒度プロセス制御（ fine-grain process control ）
 
 ### 11.6.1 process クラス
 
-SystemVerilogの `process` クラスを使うと、個別のプロセスをより細かく制御できます。
+SystemVerilog の `process` クラスを使うと、個別のプロセスをより細かく制御できる。
+
+**リスト11.14: processクラスによる細粒度プロセス制御**
 
 ```systemverilog
 initial begin
@@ -481,10 +523,12 @@ end
 
 #### process のメソッド
 
+**表11.5: processのメソッド**
+
 | メソッド | 説明 |
 |---------|------|
-| `self()` | 現在のプロセスのハンドルを返す（static） |
-| `status()` | プロセスの状態を返す（FINISHED, RUNNING, WAITING, SUSPENDED, KILLED） |
+| `self()` | 現在のプロセスのハンドルを返す（ static ） |
+| `status()` | プロセスの状態を返す（ FINISHED, RUNNING, WAITING, SUSPENDED, KILLED ） |
 | `kill()` | プロセスを強制終了 |
 | `await()` | プロセスの完了を待つ |
 | `suspend()` | プロセスを一時停止 |
@@ -494,13 +538,13 @@ end
 
 ## 11.7 まとめ
 
-本章では、SystemVerilogのプロセス制御と同期について学びました。
+本章では、 SystemVerilog のプロセス制御と同期について解説した。
 
-1. **`fork-join`** は全プロセスの完了を待ちます。**`fork-join_any`** は最初のプロセス完了で続行します。**`fork-join_none`** はバックグラウンド実行です。
-2. **`wait fork`** は全子プロセスの完了を待ち、**`disable fork`** は全子プロセスを停止します。`disable fork` の影響範囲に注意が必要です。
-3. **`event`** はシンプルな通知メカニズムです。`triggered` プロパティで同一タイムステップの発火を検出できます。
-4. **`semaphore`** は共有リソースの排他制御に使用します。`get`/`put` でブロッキング、`try_get` でノンブロッキングです。
-5. **`mailbox`** はプロセス間のデータ受け渡し用FIFOです。型パラメータで型安全性を確保できます。
-6. 検証環境では、これらのプリミティブを**組み合わせて**使用し、Generator-Driver-Monitor-Scoreboardのパイプラインを構築します。
+1. **`fork-join`** は全プロセスの完了を待つ。**`fork-join_any`** は最初のプロセス完了で続行する。**`fork-join_none`** はバックグラウンド実行である。
+2. **`wait fork`** は全子プロセスの完了を待ち、**`disable fork`** は全子プロセスを停止する。`disable fork` の影響範囲に注意が必要である。
+3. **`event`** はシンプルな通知メカニズムである。`triggered` プロパティで同一タイムステップの発火を検出できる。
+4. **`semaphore`** は共有リソースの排他制御に使用する。`get`/`put` でブロッキング、`try_get` でノンブロッキングである。
+5. **`mailbox`** はプロセス間のデータ受け渡し用 FIFO である。型パラメータで型安全性を確保できる。
+6. 検証環境では、これらのプリミティブを**組み合わせて**使用し、 Generator-Driver-Monitor-Scoreboard のパイプラインを構築する。
 
-次章では、設計の正しさを形式的に記述するSystemVerilog Assertions（SVA）について学びます。
+次章では、設計の正しさを形式的に記述する SystemVerilog Assertions （ SVA ）について解説する。

@@ -1,82 +1,74 @@
-<mxfile host="app.diagrams.net" modified="2026-04-07T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+<mxfile host="app.diagrams.net" modified="2026-04-08T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
   <diagram name="Page-1" id="page1">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="2" value="&lt;b&gt;設計言語と検証言語の統合（SystemVerilog以前と以後）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="200" y="20" width="500" height="40" as="geometry"/>
+        <mxCell id="2" value="&lt;b&gt;設計言語と検証言語の統合（SystemVerilog 以前と以後）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="520" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="3" value="&lt;b&gt;SystemVerilog以前&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="150" y="80" width="180" height="30" as="geometry"/>
+        <mxCell id="3" value="&lt;b&gt;SystemVerilog 以前&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="75" width="180" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="4" value="&lt;b&gt;SystemVerilog以後&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="80" width="180" height="30" as="geometry"/>
+        <mxCell id="4" value="&lt;b&gt;SystemVerilog 以後&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="75" width="180" height="30" as="geometry"/>
         </mxCell>
         <mxCell id="5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=none;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="120" width="300" height="380" as="geometry"/>
+          <mxGeometry x="50" y="110" width="320" height="320" as="geometry"/>
         </mxCell>
         <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=none;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="120" width="300" height="380" as="geometry"/>
+          <mxGeometry x="470" y="110" width="300" height="320" as="geometry"/>
         </mxCell>
-        <mxCell id="7" value="&lt;b&gt;設計&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="130" y="140" width="200" height="120" as="geometry"/>
+        <mxCell id="7" value="&lt;b&gt;設計言語&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="240" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="8" value="Verilog HDL&lt;br&gt;または&lt;br&gt;VHDL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="150" y="180" width="160" height="60" as="geometry"/>
+        <mxCell id="8" value="Verilog HDL&lt;br&gt;または VHDL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="130" y="170" width="160" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="9" value="&lt;b&gt;検証&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="130" y="300" width="200" height="120" as="geometry"/>
+        <mxCell id="9" value="&lt;b&gt;検証言語&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="90" y="280" width="240" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="10" value="e言語&lt;br&gt;または&lt;br&gt;Vera" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="150" y="340" width="160" height="60" as="geometry"/>
+        <mxCell id="10" value="e 言語（Specman）&lt;br&gt;または Vera" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="120" y="320" width="180" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="11" value="&lt;b&gt;SystemVerilog&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;verticalAlign=top;fontStyle=0;" vertex="1" parent="1">
-          <mxGeometry x="550" y="140" width="200" height="340" as="geometry"/>
+        <mxCell id="11" value="&lt;b&gt;SystemVerilog&lt;/b&gt;&lt;br&gt;（IEEE 1800）" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="500" y="130" width="240" height="280" as="geometry"/>
         </mxCell>
-        <mxCell id="12" value="設計機能&lt;br&gt;• RTL記述&lt;br&gt;• インターフェース&lt;br&gt;• パッケージ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="570" y="170" width="160" height="80" as="geometry"/>
+        <mxCell id="12" value="&lt;b&gt;設計機能&lt;/b&gt;&lt;br&gt;・RTL 記述&lt;br&gt;・インターフェース&lt;br&gt;・パッケージ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="170" width="140" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="13" value="検証機能&lt;br&gt;• クラス/OOP&lt;br&gt;• ランダム生成&lt;br&gt;• アサーション&lt;br&gt;• カバレッジ&lt;br&gt;• UVM" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="570" y="260" width="160" height="120" as="geometry"/>
+        <mxCell id="13" value="&lt;b&gt;検証機能&lt;/b&gt;&lt;br&gt;・クラス / OOP&lt;br&gt;・ランダム生成&lt;br&gt;・アサーション&lt;br&gt;・カバレッジ&lt;br&gt;・UVM" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="255" width="130" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="14" value="統合機能&lt;br&gt;• DPI-C&lt;br&gt;• VPI" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="570" y="390" width="160" height="60" as="geometry"/>
+        <mxCell id="14" value="&lt;b&gt;統合機能&lt;/b&gt;&lt;br&gt;・DPI-C ・VPI" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="370" width="130" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="15" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="18" target="11">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="380" y="230" as="sourcePoint"/>
-          </mxGeometry>
+        <mxCell id="15" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#6c8ebf;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="11">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="16" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#333333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="19" target="11">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="380" y="360" as="sourcePoint"/>
-          </mxGeometry>
+        <mxCell id="16" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="11">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="17" value="統合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="420" y="290" width="50" height="20" as="geometry"/>
+        <mxCell id="17" value="&lt;b&gt;統合&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="255" width="50" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="18" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#6c8ebf;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="380" y="200" as="targetPoint"/>
-          </mxGeometry>
+        <mxCell id="20" value="" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="460" width="360" height="130" as="geometry"/>
         </mxCell>
-        <mxCell id="19" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="9">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="380" y="360" as="targetPoint"/>
-          </mxGeometry>
+        <mxCell id="21" value="&lt;b&gt;統合のメリット&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="470" width="130" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="20" value="&lt;b&gt;メリット&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="830" y="140" width="140" height="140" as="geometry"/>
+        <mxCell id="22" value="✓ 1 つの言語で設計・検証が可能&lt;br&gt;✓ ツールライセンスコスト削減&lt;br&gt;✓ データ型の統一で不整合を防止&lt;br&gt;✓ 学習コストの低減" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="70" y="500" width="240" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="21" value="✓ 1つの言語で設計・検証&lt;br&gt;✓ ツールライセンス削減&lt;br&gt;✓ データ型の統一&lt;br&gt;✓ 学習コスト低減&lt;br&gt;✓ UVM標準化" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="840" y="165" width="120" height="110" as="geometry"/>
+        <mxCell id="23" value="" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="460" width="330" height="130" as="geometry"/>
         </mxCell>
-        <mxCell id="22" value="&lt;b&gt;課題&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="830" y="300" width="140" height="120" as="geometry"/>
+        <mxCell id="24" value="&lt;b&gt;残された課題&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="470" width="120" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="23" value="• 仕様が膨大&lt;br&gt;• ツール間の差異&lt;br&gt;• 学習コスト高" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="840" y="325" width="110" height="80" as="geometry"/>
+        <mxCell id="25" value="・仕様が膨大（IEEE 1800 は 1,300 頁超）&lt;br&gt;・EDA ツール間の実装差異&lt;br&gt;・設計と検証の両方を習得する学習コスト" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="500" width="300" height="70" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

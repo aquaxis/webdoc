@@ -1,83 +1,84 @@
-<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+<mxfile host="app.diagrams.net" modified="2026-04-08T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
   <diagram name="Page-1" id="page1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
+        <!-- Title -->
         <mxCell id="2" value="&lt;b&gt;構造体と共用体のメモリレイアウト比較&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="310" y="15" width="370" height="40" as="geometry"/>
+          <mxGeometry x="300" y="10" width="370" height="40" as="geometry"/>
         </mxCell>
-        <!-- STRUCT SECTION -->
-        <mxCell id="5" value="&lt;b&gt;構造体 (struct)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=14;fontColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="130" y="60" width="200" height="30" as="geometry"/>
+        <!-- === 構造体セクション === -->
+        <mxCell id="5" value="&lt;b&gt;構造体（struct）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=14;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="55" width="200" height="30" as="geometry"/>
         </mxCell>
-        <!-- Struct code -->
-        <mxCell id="10" value="&lt;font face=&quot;monospace&quot;&gt;typedef struct packed {&lt;br&gt;  logic [7:0] a;  // 8bit&lt;br&gt;  logic [3:0] b;  // 4bit&lt;br&gt;  logic [3:0] c;  // 4bit&lt;br&gt;} my_struct_t;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="95" width="240" height="95" as="geometry"/>
+        <!-- struct コード例 -->
+        <mxCell id="10" value="&lt;font face=&quot;monospace&quot;&gt;typedef struct packed {&lt;br&gt;  logic [7:0] a;  // 8bit&lt;br&gt;  logic [3:0] b;  // 4bit&lt;br&gt;  logic [3:0] c;  // 4bit&lt;br&gt;} my_struct_t;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="260" height="100" as="geometry"/>
         </mxCell>
-        <!-- Struct memory layout -->
-        <mxCell id="6" value="&lt;b&gt;メモリレイアウト (16bit)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="100" y="205" width="180" height="25" as="geometry"/>
+        <!-- struct メモリレイアウト -->
+        <mxCell id="6" value="&lt;b&gt;メモリレイアウト（16bit）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="90" y="200" width="190" height="25" as="geometry"/>
         </mxCell>
-        <!-- Struct a -->
-        <mxCell id="11" value="&lt;b&gt;a [7:0]&lt;/b&gt;&lt;br&gt;(8 bits)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="60" y="235" width="240" height="45" as="geometry"/>
+        <!-- a [7:0] -->
+        <mxCell id="11" value="&lt;b&gt;a [7:0]&lt;/b&gt;（8 bits）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="260" height="45" as="geometry"/>
         </mxCell>
-        <!-- Struct b -->
-        <mxCell id="12" value="&lt;b&gt;b [3:0]&lt;/b&gt;&lt;br&gt;(4 bits)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="60" y="280" width="120" height="45" as="geometry"/>
+        <!-- b [3:0] -->
+        <mxCell id="12" value="&lt;b&gt;b [3:0]&lt;/b&gt;（4 bits）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="275" width="130" height="45" as="geometry"/>
         </mxCell>
-        <!-- Struct c -->
-        <mxCell id="13" value="&lt;b&gt;c [3:0]&lt;/b&gt;&lt;br&gt;(4 bits)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="180" y="280" width="120" height="45" as="geometry"/>
+        <!-- c [3:0] -->
+        <mxCell id="13" value="&lt;b&gt;c [3:0]&lt;/b&gt;（4 bits）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="275" width="130" height="45" as="geometry"/>
         </mxCell>
-        <!-- Struct total -->
-        <mxCell id="14" value="合計: 8 + 4 + 4 = &lt;b&gt;16 bits&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="60" y="335" width="240" height="30" as="geometry"/>
+        <!-- struct 合計 -->
+        <mxCell id="14" value="合計: 8 + 4 + 4 = &lt;b&gt;16 bits&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="330" width="260" height="30" as="geometry"/>
         </mxCell>
-        <!-- Bit position labels for struct -->
-        <mxCell id="14a" value="&lt;font color=&quot;#999999&quot;&gt;[15:8]&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="310" y="245" width="50" height="25" as="geometry"/>
+        <!-- ビット位置ラベル -->
+        <mxCell id="14a" value="[15:8]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="320" y="240" width="50" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="14b" value="&lt;font color=&quot;#999999&quot;&gt;[7:4]&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="325" width="50" height="20" as="geometry"/>
+        <mxCell id="14b" value="[7:4]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="50" y="320" width="50" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="14c" value="&lt;font color=&quot;#999999&quot;&gt;[3:0]&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="250" y="325" width="50" height="20" as="geometry"/>
+        <mxCell id="14c" value="[3:0]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="260" y="320" width="50" height="25" as="geometry"/>
         </mxCell>
-        <!-- UNION SECTION -->
-        <mxCell id="7" value="&lt;b&gt;共用体 (union)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=14;fontColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="600" y="60" width="200" height="30" as="geometry"/>
+        <!-- === 共用体セクション === -->
+        <mxCell id="7" value="&lt;b&gt;共用体（union）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=14;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="590" y="55" width="200" height="30" as="geometry"/>
         </mxCell>
-        <!-- Union code -->
-        <mxCell id="30" value="&lt;font face=&quot;monospace&quot;&gt;typedef union packed {&lt;br&gt;  logic [7:0] byte_val;&lt;br&gt;  logic [3:0] nibble;&lt;br&gt;} my_union_t;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
-          <mxGeometry x="530" y="95" width="260" height="80" as="geometry"/>
+        <!-- union コード例 -->
+        <mxCell id="30" value="&lt;font face=&quot;monospace&quot;&gt;typedef union packed {&lt;br&gt;  logic [7:0] byte_val;&lt;br&gt;  logic [3:0] nibble;&lt;br&gt;} my_union_t;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="280" height="90" as="geometry"/>
         </mxCell>
-        <!-- Union memory layout -->
-        <mxCell id="8" value="&lt;b&gt;メモリレイアウト (8bit)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="570" y="205" width="180" height="25" as="geometry"/>
+        <!-- union メモリレイアウト -->
+        <mxCell id="8" value="&lt;b&gt;メモリレイアウト（8bit）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="200" width="180" height="25" as="geometry"/>
         </mxCell>
-        <!-- Union byte_val (full width) -->
-        <mxCell id="31" value="&lt;b&gt;byte_val [7:0]&lt;/b&gt; (8 bits)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="530" y="235" width="260" height="45" as="geometry"/>
+        <!-- byte_val [7:0] -->
+        <mxCell id="31" value="&lt;b&gt;byte_val [7:0]&lt;/b&gt;（8 bits）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="230" width="280" height="45" as="geometry"/>
         </mxCell>
-        <!-- Union nibble (overlapping) -->
-        <mxCell id="32" value="&lt;b&gt;nibble [3:0]&lt;/b&gt; (4 bits)&lt;br&gt;同じ領域を共有" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;dashed=1;dashPattern=5 5;" vertex="1" parent="1">
-          <mxGeometry x="530" y="285" width="260" height="45" as="geometry"/>
+        <!-- nibble [3:0] -->
+        <mxCell id="32" value="&lt;b&gt;nibble [3:0]&lt;/b&gt;（4 bits）— 同じ領域を共有" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;dashed=1;dashPattern=5 5;" vertex="1" parent="1">
+          <mxGeometry x="520" y="280" width="280" height="45" as="geometry"/>
         </mxCell>
-        <!-- Union total -->
-        <mxCell id="33" value="合計: max(8, 4) = &lt;b&gt;8 bits&lt;/b&gt; (共有)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="530" y="340" width="260" height="30" as="geometry"/>
+        <!-- union 合計 -->
+        <mxCell id="33" value="合計: max(8, 4) = &lt;b&gt;8 bits&lt;/b&gt;（共有）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="335" width="280" height="30" as="geometry"/>
         </mxCell>
-        <!-- Key differences -->
-        <mxCell id="50" value="&lt;b&gt;主な違い&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="60" y="400" width="730" height="30" as="geometry"/>
+        <!-- === 主な違い === -->
+        <mxCell id="50" value="&lt;b&gt;主な違い&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;fontColor=#ffffff;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="400" width="750" height="30" as="geometry"/>
         </mxCell>
         <mxCell id="51" value="&lt;b&gt;構造体:&lt;/b&gt; 各メンバが独立した領域を持つ → サイズ = 全メンバの合計" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="430" width="730" height="35" as="geometry"/>
+          <mxGeometry x="50" y="430" width="750" height="35" as="geometry"/>
         </mxCell>
         <mxCell id="52" value="&lt;b&gt;共用体:&lt;/b&gt; 全メンバが同じ領域を共有 → サイズ = 最大メンバのサイズ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="465" width="730" height="35" as="geometry"/>
+          <mxGeometry x="50" y="465" width="750" height="35" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

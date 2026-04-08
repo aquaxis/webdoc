@@ -1,22 +1,26 @@
-<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
+<mxfile host="app.diagrams.net" modified="2026-04-08T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.0">
   <diagram name="Page-1" id="page1">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
         <mxCell id="2" value="&lt;b&gt;シミュレータの分類と特徴&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="380" y="20" width="250" height="40" as="geometry"/>
+          <mxGeometry x="350" y="20" width="260" height="40" as="geometry"/>
         </mxCell>
-        <!-- Root node -->
-        <mxCell id="10" value="&lt;b&gt;シミュレータ&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="420" y="80" width="180" height="50" as="geometry"/>
+        <mxCell id="10" value="&lt;b&gt;SystemVerilog シミュレータ&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="370" y="80" width="220" height="50" as="geometry"/>
         </mxCell>
-        <!-- Branch 1: Event-driven -->
-        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" edge="1" source="10" target="20" parent="1">
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;" edge="1" source="10" target="20" parent="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="20" value="&lt;b&gt;イベント駆動&lt;/b&gt;&lt;br&gt;シミュレータ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="100" y="180" width="180" height="60" as="geometry"/>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;" edge="1" source="10" target="30" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#333333;" edge="1" source="10" target="40" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;イベント駆動シミュレータ&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="190" width="210" height="50" as="geometry"/>
         </mxCell>
         <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#6c8ebf;" edge="1" source="20" target="21" parent="1">
           <mxGeometry relative="1" as="geometry"/>
@@ -24,37 +28,29 @@
         <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#6c8ebf;" edge="1" source="20" target="22" parent="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="21" value="&lt;b&gt;VCS&lt;/b&gt;&lt;br&gt;(Synopsys)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="290" width="140" height="50" as="geometry"/>
+        <mxCell id="21" value="&lt;b&gt;VCS&lt;/b&gt; (Synopsys)" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="290" width="140" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="22" value="&lt;b&gt;Xcelium&lt;/b&gt;&lt;br&gt;(Cadence)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="180" y="290" width="140" height="50" as="geometry"/>
+        <mxCell id="22" value="&lt;b&gt;Xcelium&lt;/b&gt; (Cadence)" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="175" y="290" width="140" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="23" value="&lt;font color=&quot;#666666&quot;&gt;特徴:&lt;br&gt;- 信号変化時のみ評価&lt;br&gt;- 高精度（4値論理対応）&lt;br&gt;- RTL/ゲートレベル対応&lt;br&gt;- 最も一般的&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="40" y="355" width="260" height="90" as="geometry"/>
+        <mxCell id="23" value="・信号変化時のみ評価&lt;br&gt;・高精度（4 値論理対応）&lt;br&gt;・RTL / ゲートレベル対応&lt;br&gt;・最も一般的な方式" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="345" width="260" height="80" as="geometry"/>
         </mxCell>
-        <!-- Branch 2: Cycle-based -->
-        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" edge="1" source="10" target="30" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="30" value="&lt;b&gt;サイクルベース&lt;/b&gt;&lt;br&gt;シミュレータ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="420" y="180" width="180" height="60" as="geometry"/>
+        <mxCell id="30" value="&lt;b&gt;サイクルベースシミュレータ&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="370" y="190" width="220" height="50" as="geometry"/>
         </mxCell>
         <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#82b366;" edge="1" source="30" target="31" parent="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="31" value="&lt;b&gt;Verilator&lt;/b&gt;&lt;br&gt;(OSS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="440" y="290" width="140" height="50" as="geometry"/>
+        <mxCell id="31" value="&lt;b&gt;Verilator&lt;/b&gt; (OSS)" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="410" y="290" width="140" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="33" value="&lt;font color=&quot;#666666&quot;&gt;特徴:&lt;br&gt;- クロックサイクル単位評価&lt;br&gt;- 2値論理（高速）&lt;br&gt;- C++変換方式&lt;br&gt;- 大規模設計向き&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="380" y="355" width="260" height="90" as="geometry"/>
+        <mxCell id="33" value="・クロックサイクル単位で評価&lt;br&gt;・2 値論理（高速）&lt;br&gt;・C++ 変換方式&lt;br&gt;・大規模設計向き" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="370" y="345" width="230" height="80" as="geometry"/>
         </mxCell>
-        <!-- Branch 3: Formal -->
-        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" edge="1" source="10" target="40" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="40" value="&lt;b&gt;形式検証&lt;/b&gt;&lt;br&gt;ツール" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="740" y="180" width="180" height="60" as="geometry"/>
+        <mxCell id="40" value="&lt;b&gt;形式検証ツール&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="700" y="190" width="210" height="50" as="geometry"/>
         </mxCell>
         <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#9673a6;" edge="1" source="40" target="41" parent="1">
           <mxGeometry relative="1" as="geometry"/>
@@ -62,14 +58,14 @@
         <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#9673a6;" edge="1" source="40" target="42" parent="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="41" value="&lt;b&gt;JasperGold&lt;/b&gt;&lt;br&gt;(Cadence)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="680" y="290" width="130" height="50" as="geometry"/>
+        <mxCell id="41" value="&lt;b&gt;JasperGold&lt;/b&gt; (Cadence)" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="290" width="140" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="42" value="&lt;b&gt;VC Formal&lt;/b&gt;&lt;br&gt;(Synopsys)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="830" y="290" width="130" height="50" as="geometry"/>
+        <mxCell id="42" value="&lt;b&gt;VC Formal&lt;/b&gt; (Synopsys)" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="815" y="290" width="140" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="43" value="&lt;font color=&quot;#666666&quot;&gt;特徴:&lt;br&gt;- 数学的手法で網羅検証&lt;br&gt;- アサーションベース&lt;br&gt;- テストベクタ不要&lt;br&gt;- プロパティ検証&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="700" y="355" width="260" height="90" as="geometry"/>
+        <mxCell id="43" value="・数学的手法で網羅検証&lt;br&gt;・アサーションベース&lt;br&gt;・テストベクタ不要&lt;br&gt;・プロパティ検証" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="680" y="345" width="230" height="80" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

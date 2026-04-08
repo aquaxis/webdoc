@@ -25,10 +25,14 @@ title: "第12章：SystemVerilog Assertions（SVA）"
 
 SystemVerilogのアサーションは大きく2種類に分かれます：
 
+**表12.1: アサーションの分類**
+
 | 種類 | 特徴 | 時間的振る舞い | 使用場面 |
 |------|------|--------------|---------|
 | **即時アサーション** | 手続きブロック内で即座に評価 | なし（単一時刻） | 組み合わせ条件のチェック |
 | **並行アサーション** | クロックに同期して評価 | あり（複数サイクル） | プロトコル・タイミング検証 |
+
+![図12.1: アサーションの分類](/images/systemverilog-guidebook/ch12_assertion_types.drawio.png)
 
 ---
 
@@ -37,6 +41,8 @@ SystemVerilogのアサーションは大きく2種類に分かれます：
 ### 12.3.1 基本構文
 
 即時アサーションは、`always` ブロックや `initial` ブロックなどの手続きコード内で使用します。指定した条件が `false` になるとアサーション違反が報告されます。
+
+**リスト12.1: 即時アサーションの基本構文**
 
 ```systemverilog
 // 基本的な即時アサーション
@@ -57,6 +63,8 @@ end
 
 即時アサーションには、成功時と失敗時の処理を指定できます。
 
+**リスト12.2: アサーションの成功・失敗時処理**
+
 ```systemverilog
 always_ff @(posedge clk) begin
     // assert (条件) 成功時の処理 else 失敗時の処理;
@@ -71,12 +79,16 @@ end
 
 アサーション違反時のメッセージには4つの重大度があります：
 
+**表12.2: 重大度レベル**
+
 | システムタスク | 重大度 | シミュレーションへの影響 |
 |--------------|--------|----------------------|
 | `$info()` | 情報 | 続行 |
 | `$warning()` | 警告 | 続行 |
 | `$error()` | エラー | 続行（デフォルト） |
 | `$fatal()` | 致命的 | 即座に停止 |
+
+**リスト12.3: 重大度レベルの使い分け**
 
 ```systemverilog
 // 重大度の使い分け
@@ -103,6 +115,8 @@ end
 
 並行アサーションはクロックに同期して評価され、複数サイクルにわたる時間的な振る舞いを検証できます。`assert property` 構文を使用します。
 
+**リスト12.4: 並行アサーションの基本構文**
+
 ```systemverilog
 // クロックの立ち上がりで評価される並行アサーション
 assert property (@(posedge clk) disable iff (!rst_n)
@@ -113,6 +127,8 @@ assert property (@(posedge clk) disable iff (!rst_n)
 ### 12.4.2 シーケンス（Sequence）
 
 **シーケンス**は、時間的なイベントの連なりを記述するための構文です。`sequence` キーワードで名前を付けて再利用できます。
+
+**リスト12.5: シーケンスの定義と使用**
 
 ```systemverilog
 // シーケンスの定義
@@ -132,11 +148,15 @@ assert property (@(posedge clk) disable iff (!rst_n)
 
 #### 遅延演算子（##）
 
+**表12.3: 遅延演算子**
+
 | 演算子 | 意味 | 例 |
 |--------|------|-----|
 | `##n` | ちょうどnサイクル後 | `a ##2 b` → aの2サイクル後にb |
 | `##[m:n]` | m〜nサイクル後 | `a ##[1:5] b` → aの1〜5サイクル後にb |
 | `##[0:$]` | 0サイクル以上（いつか） | `a ##[0:$] b` → aの後いつかb |
+
+**リスト12.6: 遅延演算子の使用例**
 
 ```systemverilog
 // 遅延演算子の例
@@ -148,9 +168,13 @@ sequence handshake;
 endsequence
 ```
 
+![図12.2: シーケンスの遅延演算子](/images/systemverilog-guidebook/ch12_delay_operators.drawio.png)
+
 ### 12.4.3 プロパティ（Property）
 
 **プロパティ**は、シーケンスに含意（implication）や否定などの論理を加えた、検証したい条件を記述するものです。
+
+**リスト12.7: プロパティの定義と使用**
 
 ```systemverilog
 // プロパティの定義
@@ -171,10 +195,14 @@ cover property (req_must_be_acked);
 
 含意演算子は「前提条件が成り立つ場合に帰結が成り立つ」ことを検証します。
 
+**表12.4: 含意演算子**
+
 | 演算子 | 名称 | 意味 |
 |--------|------|------|
 | `\|->` | オーバーラッピング含意 | 前提と同じサイクルから帰結を評価 |
 | `\|=>` | ノンオーバーラッピング含意 | 前提の次のサイクルから帰結を評価 |
+
+**リスト12.8: 含意演算子の使用例**
 
 ```systemverilog
 property overlapping_example;
@@ -189,13 +217,15 @@ property non_overlapping_example;
 endproperty
 ```
 
-![含意演算子の動作](/images/systemverilog-guidebook/ch12_implication_operators.drawio.png)
+![図12.3: 含意演算子の動作](/images/systemverilog-guidebook/ch12_implication_operators.drawio.png)
 
 ---
 
 ## 12.5 高度なシーケンス演算子
 
 ### 12.5.1 繰り返し演算子
+
+**リスト12.9: 繰り返し演算子の使用例**
 
 ```systemverilog
 // 連続繰り返し [*n]: n回連続
@@ -220,9 +250,13 @@ sequence non_consec;
 endsequence
 ```
 
+![図12.4: 繰り返し演算子の動作](/images/systemverilog-guidebook/ch12_repetition_operators.drawio.png)
+
 ### 12.5.2 intersect
 
 `intersect` は、2つのシーケンスが同時に開始し、同時に終了することを要求します。
+
+**リスト12.10: intersectによる同時終了条件**
 
 ```systemverilog
 sequence data_phase;
@@ -242,6 +276,8 @@ endsequence
 ### 12.5.3 within
 
 `within` は、一方のシーケンスが他方のシーケンスの期間内に完全に含まれることを検証します。
+
+**リスト12.11: withinによる包含関係の検証**
 
 ```systemverilog
 sequence short_seq;
@@ -263,6 +299,8 @@ endproperty
 
 `throughout` は、シーケンス全体を通じてある信号が一定の値を保つことを検証します。
 
+**リスト12.12: throughoutによる持続条件の検証**
+
 ```systemverilog
 // バースト転送中、busyが常にHighであること
 property burst_keeps_busy;
@@ -278,6 +316,8 @@ assert property (burst_keeps_busy);
 
 `first_match` は、複数のマッチが可能な場合に最初のマッチのみを採用します。
 
+**リスト12.13: first_matchによる最初のマッチのみ採用**
+
 ```systemverilog
 property first_ack;
     @(posedge clk)
@@ -291,6 +331,8 @@ endproperty
 ## 12.6 システム関数
 
 SVAでよく使われるシステム関数を紹介します。
+
+**リスト12.14: SVAシステム関数の使用例**
 
 ```systemverilog
 property edge_detection;
@@ -330,6 +372,8 @@ endproperty
 
 ### 12.7.1 AXIプロトコルのアサーション
 
+**リスト12.15: AXIプロトコルのアサーション例**
+
 ```systemverilog
 // AXI仕様: VALIDはREADYがアサートされるまで保持しなければならない
 property axi_valid_stable;
@@ -358,7 +402,11 @@ assert property (axi_resp_with_valid)
     else $error("AXI Protocol Violation: BRESP is X when BVALID is high");
 ```
 
+![図12.5: AXIプロトコルのアサーション](/images/systemverilog-guidebook/ch12_axi_assertions.drawio.png)
+
 ### 12.7.2 FIFOのアサーション
+
+**リスト12.16: FIFOのアサーション例**
 
 ```systemverilog
 module fifo_assertions #(parameter DEPTH = 16) (
@@ -406,6 +454,8 @@ endmodule
 ### 12.7.3 bind によるアサーションの接続
 
 `bind` を使うと、設計モジュールのソースコードを変更せずにアサーションモジュールを接続できます。
+
+**リスト12.17: bindによるアサーションの接続**
 
 ```systemverilog
 // アサーションモジュールをFIFOに接続
